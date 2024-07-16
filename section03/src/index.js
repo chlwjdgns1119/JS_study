@@ -14,10 +14,15 @@ console.log(sub(2, 1));
 /* import { add, sub } from "./math.js";
 import mul from "./math.js"; */
 
-import mul, { add, sub } from "./math.js"; // 동일한 경로로부터 불러오면 합치는 것도 가능하다.
+/* import mul, { add, sub } from "./math.js"; // 동일한 경로로부터 불러오면 합치는 것도 가능하다.
 
 console.log(mul(1, 2));
 console.log(add(1,2));
 console.log(sub(2,1));
 console.log("안녕 nodejs");
+ */
 
+import randomColor from "randomcolor";
+
+const color = randomColor();
+console.log(color)
