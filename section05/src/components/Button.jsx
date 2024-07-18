@@ -15,8 +15,14 @@ export default Button; */
 
 // 구조분해 할당으로 바로 받아올 수도 있다.
 const Button = ({text, color, children}) => {
+    const onClickButton = (e) => {
+        console.log(e);
+        console.log(text);
+    }
     return( 
-        <button style={{color: color}}>
+        <button 
+            onClick={onClickButton}
+        style={{color: color}}>
             {text} - {color.toUpperCase()}
             {children}
         </button>
