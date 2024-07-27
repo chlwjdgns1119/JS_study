@@ -17,10 +17,7 @@ arr1.forEach((item, idx, arr) => {
 
 // 2. includes
 // 배열의 특정요소가 있는지 확인하는 메소드이다.
-let arr2 = [1, 2, 3];
-let isInclude = arr2.includes(3);
-console.log(isInclude); // true
-
+ㅋ
 // 3. index of
 // 특정 요소의 인덱스를 찾아서 반환해준다.
 // 찾으려는 값이 여러개(요소가 똑같은게 여러 개일 때) 그러면 가장 먼저 찾아낸 요소의 인덱스를 찾아내게 된다.
