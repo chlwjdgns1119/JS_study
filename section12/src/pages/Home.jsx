@@ -11,7 +11,6 @@ const Home = () => {
                 rightChild={<Button text={">"}/>}
             />
             <DiaryList />
-                
         </div>
     )
 }

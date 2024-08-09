@@ -1,3 +1,5 @@
+import "./DiaryList.css";
+import DiaryItem from "./DiaryItem";
 import Button from "./Button"
 
 const DiaryList = () => {
@@ -8,10 +10,10 @@ const DiaryList = () => {
                     <option value={"latest"}>최신순</option>
                     <option value={"oldest"}>오래된 순</option>
                 </select>
-                <Button text={"새 일기 쓰기"} />
+                <Button text={"새 일기 쓰기"} type={"POSITIVE"} />
             </div>
             <div className="list_wrapper">
-
+                <DiaryItem />
             </div>
         </div>
     )
