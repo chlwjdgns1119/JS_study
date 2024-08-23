@@ -3,26 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css" >
     <title>Document</title>
     <style>
-        div {
-            width: 150px;
-            height: 50px;
-            background-color: salmon;
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(200px, 1fr));
         }
 
         .box2 {
-            border: 10px solid black;
-        }
-
-        .box3 {
-            padding: 20px;
+            justify-self: center;
         }
     </style>
 </head>
 <body>
-    <div class="box1">BOX1</div>
-    <div class="box2">BOX1</div>
-    <div class="box3">BOX1</div>
+    <div class="container">
+        <div class="item box1">1</div>
+        <div class="item box2">2</div>
+        <div class="item box3">3</div>
+        <div class="item box4">4</div>
+        <div class="item box5">5</div>
+        <div class="item box6">6</div>
+        <div class="item box7">7</div>
+        <div class="item box8">8</div>
+        <div class="item box9">9</div>
+        <div class="item box10">10</div>
+    </div>
 </body>
 </html>
