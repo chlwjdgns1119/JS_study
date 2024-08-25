@@ -11,26 +11,34 @@ const Header = () => {
                 <img src={brand_logo} />
             </div>
             <div className="navbar-menu">
-                <div className="navbar-left">
-                    <img src={instagram_logo} />
-                    <img src={naverblog_logo} />
-                    <img src={youtube_logo} />
-                </div>
-                <div className="navbar-center">
-                    푸드트럭, 행사, 장터, 커뮤니티 페이지
+                <div className="navbar-social-media">
+                    <img src={instagram_logo} onClick={()=>{window.open("https://www.instagram.com/")}} />
+                    <img src={naverblog_logo} onClick={()=>{window.open("https://www.naver.com/")}} />
+                    <img src={youtube_logo} onClick={()=>{window.open("https://www.youtube.com/")}} />
                 </div>
                 <div className="navbar-right">
-                    <div className="search-bar">
+                    <div className="navbar-item">
+                        <ul>
+                            <li>푸드트럭</li>
+                            <li>푸드트럭</li>
+                            <li>푸드트럭</li>
+                            <li>푸드트럭</li>
+                        </ul>
+                    </div>
+                    <div className="nabar-search">
                         검색바
                     </div>
-                    <div className="button">
-                        로그인
-                    </div>
-                    <div className="button">
-                        회원가입
+                    <div className="navbar-auth">   
+                        <div className="button">
+                            로그인
+                        </div>
+                        <div className="button">
+                            회원가입
+                        </div>
                     </div>
                 </div>
-            </div>
+            </div>        
+                        
         </header>
     );
 };
