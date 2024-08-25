@@ -1,0 +1,16 @@
+#header {
+    display: flex;
+}
+
+.navbar-menu {
+    display: flex;
+}
+
+.navbar-menu .navbar-left > img{
+    width: 30px;
+    height: 30px;
+}
+
+.navbar-menu .navbar-right {
+    display: flex;
+}
