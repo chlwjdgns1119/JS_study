@@ -3,6 +3,7 @@ import brand_logo from '../assets/brand_logo.png';
 import instagram_logo from '../assets/instagram_logo.png';
 import naverblog_logo from '../assets/naverblog_logo.png';
 import youtube_logo from '../assets/youtube_logo.png';
+import Menu from './Menu'
 
 const Header = () => {
     return(
@@ -17,14 +18,7 @@ const Header = () => {
                     <img src={youtube_logo} onClick={()=>{window.open("https://www.youtube.com/")}} />
                 </div>
                 <div className="navbar-right">
-                    <div className="navbar-item">
-                        <ul>
-                            <li>푸드트럭</li>
-                            <li>푸드트럭</li>
-                            <li>푸드트럭</li>
-                            <li>푸드트럭</li>
-                        </ul>
-                    </div>
+                    <Menu />
                     <div className="nabar-search">
                         검색바
                     </div>
