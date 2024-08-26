@@ -7,14 +7,17 @@
     align-items: center;
 }
 
-.brand_header {
+.header_class {
     height: 100%;
     padding: 10px;
     box-sizing: border-box;
-    margin-left: 150px;
 }
 
-.brand_header > img{
+.brand_header {
+    margin-left: 250px;
+}
+
+.header_class .brand_header > img{
     display: block;
     width: auto;
     height: 100%;
@@ -28,7 +31,7 @@
 .navbar-social-media {
     display: flex;
     gap: 5px;
-    margin-right: 100px;
+    margin-right: 150px;
 }
 
 .navbar-social-media > img {
@@ -40,6 +43,7 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
+    margin-right: 250px;
 }
 
 .navbar-menu .navbar-auth {
