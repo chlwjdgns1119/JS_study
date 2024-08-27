@@ -10,9 +10,7 @@ const Header = () => {
     return(
         <header id="header">
             <div className="header_class">
-                <div className="brand_header">
-                    <img src={brand_logo} />
-                </div>
+                <img src={brand_logo} />
                 <div className="navbar-menu">
                     <div className="navbar-social-media">
                         <img src={instagram_logo} onClick={()=>{window.open("https://www.instagram.com/")}} />

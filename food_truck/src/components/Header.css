@@ -5,20 +5,19 @@
     border-bottom: 1px solid rgb(236, 236, 236);
     gap: 30px;
     align-items: center;
+    justify-content: center;
 }
 
 .header_class {
+    display: flex;
     height: 100%;
     padding: 10px;
     box-sizing: border-box;
+    align-items: center;
+    gap: 20px;
 }
 
-.brand_header {
-    margin-left: 250px;
-}
-
-.header_class .brand_header > img{
-    display: block;
+.header_class > img{
     width: auto;
     height: 100%;
 }
@@ -26,12 +25,12 @@
 .navbar-menu {
     display: flex;
     width: 100%;
+    gap: 20px;
 }
 
 .navbar-social-media {
     display: flex;
     gap: 5px;
-    margin-right: 150px;
 }
 
 .navbar-social-media > img {
@@ -41,11 +40,11 @@
 
 .navbar-right {
     display: flex;
-    justify-content: space-between;
     width: 100%;
-    margin-right: 250px;
+    gap: 20px;
 }
 
 .navbar-menu .navbar-auth {
     display: flex;
+    gap: 20px;
 }
