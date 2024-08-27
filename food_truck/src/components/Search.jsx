@@ -2,7 +2,7 @@ import "./Search.css"
 
 const Search = () => {
     return(
-        <div>검색바</div>
+        <div className="searchbar">검색바</div>
     );
 };
 

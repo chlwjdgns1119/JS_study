@@ -13,7 +13,6 @@
     height: 100%;
     padding: 10px;
     box-sizing: border-box;
-    align-items: center;
     gap: 20px;
 }
 
@@ -31,6 +30,7 @@
 .navbar-social-media {
     display: flex;
     gap: 5px;
+    align-items: center;
 }
 
 .navbar-social-media > img {
@@ -47,4 +47,5 @@
 .navbar-menu .navbar-auth {
     display: flex;
     gap: 20px;
+    align-items: center;
 }
