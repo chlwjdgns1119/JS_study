@@ -1,5 +1,7 @@
 import "./Menu.css"
 import { useState } from "react";
+import MenuItem from "./MenuItem";
+import menuItem from "../util/menuItem";
 
 const Menu = () => {
     const [hover, setHover] = useState();
@@ -18,9 +20,7 @@ const Menu = () => {
                         onMouseOver={() => {setHover(true)}}
                         onMouseOut={() => {setHover(false)}}
                     >
-                        <li>{hover && 'true입니다'}</li>
-                        <li>{hover && 'true입니다'}</li>
-                        <li>{hover && 'true입니다'}</li>
+                        {hover&&<MenuItem items={menuItem[0]}/>}
                     </ul>
                 </li>
                 <li>푸드트럭</li>

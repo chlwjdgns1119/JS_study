@@ -1,5 +1,12 @@
 const menuItem = [
-    "푸드트럭", "행사", "장터", "커뮤니티"
+    {
+        '지역축제': '/localfestival',
+        '대학축제': '/collegefestival',
+        '차량렌탈': '/lental'
+    }, 
+    {}, 
+    {}, 
+    {},
 ];
 
 export default menuItem;

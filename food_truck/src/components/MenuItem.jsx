@@ -1,9 +1,13 @@
-const MenuItem = ({ item }) => {
-    const items = ['1번 아이템', '2번 아이템', '3번 아이템'];
+const MenuItem = ({ items }) => {
+
+    const keys = Object.keys(items);
+
+    const data = keys.map((key) => 
+        (<li key={key}><a href={items[key]}>{key}</a></li>)
+    )
+
     return(
-        <div>
-            
-        </div>
+        data
     );
 };
 
