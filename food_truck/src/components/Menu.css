@@ -3,7 +3,7 @@
     align-items: center;
 }
 
-.menu-items > ul {
+.menu-items .first-items {
     display: flex;
     flex-wrap: wrap;
     padding: 0;
@@ -13,8 +13,22 @@
     align-items: center;
 }
 
-.menu-items > li {
+.menu-items .first-items > li{
+    position: relative;
+    cursor: pointer;
+}
+
+.menu-items .first-items > li > ul{
+    position: absolute;
+    top: 100%;
+    background-color: aquamarine;
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 20px;
+}
+
+.menu-items li {
     padding: 0;
     margin: 0;
 }
-

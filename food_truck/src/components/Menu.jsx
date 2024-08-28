@@ -8,18 +8,25 @@ const Menu = () => {
 
     return(
         <div className="menu-items">
-            <ul>
-            <li 
-                onMouseOver={() => {setHover(true)}}
-                onMouseOut={() => {setHover(false)}}
-            >
-                푸드트럭
-                <p>{hover && 'true입니다'}</p>
-            </li>
-            <li>푸드트럭</li>
-            <li>푸드트럭</li>
-            <li>푸드트럭</li>
-        </ul>
+            <ul className="first-items">
+                <li 
+                    onMouseOver={() => {setHover(true)}}
+                    onMouseOut={() => {setHover(false)}}
+                >
+                    푸드트럭
+                    <ul
+                        onMouseOver={() => {setHover(true)}}
+                        onMouseOut={() => {setHover(false)}}
+                    >
+                        <li>{hover && 'true입니다'}</li>
+                        <li>{hover && 'true입니다'}</li>
+                        <li>{hover && 'true입니다'}</li>
+                    </ul>
+                </li>
+                <li>푸드트럭</li>
+                <li>푸드트럭</li>
+                <li>푸드트럭</li>
+            </ul>
         </div>
     );
 };
