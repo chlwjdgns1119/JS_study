@@ -21,7 +21,7 @@
     height: 100%;
 }
 
-.navbar-menu {
+.navbar-left {
     display: flex;
     width: 100%;
     gap: 20px;

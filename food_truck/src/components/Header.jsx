@@ -3,7 +3,7 @@ import brand_logo from '../assets/brand_logo.png';
 import instagram_logo from '../assets/instagram_logo.png';
 import naverblog_logo from '../assets/naverblog_logo.png';
 import youtube_logo from '../assets/youtube_logo.png';
-import Menu from './Menu';
+import FoodtruckNav from './FoodtruckNav';
 import Search from './Search';
 
 const Header = () => {
@@ -11,14 +11,14 @@ const Header = () => {
         <header id="header">
             <div className="header_class">
                 <img src={brand_logo} />
-                <div className="navbar-menu">
+                <div className="navbar-left">
                     <div className="navbar-social-media">
                         <img src={instagram_logo} onClick={()=>{window.open("https://www.instagram.com/")}} />
                         <img src={naverblog_logo} onClick={()=>{window.open("https://www.naver.com/")}} />
                         <img src={youtube_logo} onClick={()=>{window.open("https://www.youtube.com/")}} />
                     </div>
                     <div className="navbar-right">
-                        <Menu />
+                        <FoodtruckNav />
                         <Search />
                         <div className="navbar-auth">   
                             <div className="button">
