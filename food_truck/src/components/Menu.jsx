@@ -16,12 +16,13 @@ const Menu = () => {
                     onMouseOut={() => {setHover(false)}}
                 >
                     푸드트럭
+                    {hover&&
                     <ul
-                        onMouseOver={() => {setHover(true)}}
-                        onMouseOut={() => {setHover(false)}}
-                    >
-                        {hover&&<MenuItem items={menuItem[0]}/>}
-                    </ul>
+                    onMouseOver={() => {setHover(true)}}
+                    onMouseOut={() => {setHover(false)}}
+                >
+                    {hover&&<MenuItem items={menuItem[0]}/>}
+                </ul>}
                 </li>
                 <li>푸드트럭</li>
                 <li>푸드트럭</li>
