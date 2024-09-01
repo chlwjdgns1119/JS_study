@@ -3,7 +3,10 @@ import brand_logo from '../assets/brand_logo.png';
 import instagram_logo from '../assets/instagram_logo.png';
 import naverblog_logo from '../assets/naverblog_logo.png';
 import youtube_logo from '../assets/youtube_logo.png';
-import FoodtruckNav from './FoodtruckNav';
+import Rental from './Rental';
+import Festival from './Festival';
+import Market from './Market';
+import Community from './Community';
 import Search from './Search';
 
 const Header = () => {
@@ -18,7 +21,10 @@ const Header = () => {
                         <img src={youtube_logo} onClick={()=>{window.open("https://www.youtube.com/")}} />
                     </div>
                     <div className="navbar-right">
-                        <FoodtruckNav />
+                        <Rental />
+                        <Festival />
+                        <Market />
+                        <Community />
                         <Search />
                         <div className="navbar-auth">   
                             <div className="button">
