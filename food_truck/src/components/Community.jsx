@@ -11,7 +11,7 @@ const Community = () => {
                 <span>커뮤니티</span>
             </Link>
             {hover && 
-                <ul className="dropdown-item">
+                <ul className="dropdown-community">
                     <li>
                         <Link to='/community/free' style={{ textDecoration: "none"}}>자유</Link>
                     </li>

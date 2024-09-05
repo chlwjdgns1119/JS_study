@@ -11,7 +11,7 @@ const Rental = () => {
                 <span>렌탈</span>
             </Link>
             {hover && 
-                <ul className="dropdown-item">
+                <ul className="dropdown-rental">
                     <li>
                         <Link to='/rental/foodtruck' style={{ textDecoration: "none"}}>푸드트럭 렌탈</Link>
                     </li>

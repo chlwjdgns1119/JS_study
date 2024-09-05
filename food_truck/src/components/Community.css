@@ -2,14 +2,15 @@
     display: flex;
     align-items: center;
     position: relative;
+    padding: 10px;
 }
 
-.dropdown-item {
+.dropdown-community {
     position: absolute;
     top: 100%;
     margin: 0;
     padding: 0;
-    width: 120px;
+    width: 60px;
     list-style: none;
     background-color: white;
     border: 1px solid rgb(226, 226, 226);
@@ -18,11 +19,10 @@
     flex-direction: column; 
     justify-content: center; 
     align-items: center;
-    gap: 20px;
     padding-bottom: 10px;
 }
 
-.dropdown-item > li {
+.dropdown-community > li {
     text-align: center; /* 가운데 정렬 */
     padding: 5px 0; /* 패딩으로 항목 높이 조정 */
     display:inline-block; 
@@ -30,7 +30,7 @@
     margin-top: 10px;
 }
 
-.dropdown-item > li > a {
+.dropdown-community > li > a {
     color:darkslategray
 }
 

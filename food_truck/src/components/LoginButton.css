@@ -1,0 +1,9 @@
+.login-button > button {
+    border: 1px solid rgb(226, 226, 226);
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 5px 10px;
+    color: rgb(226, 226, 226);
+    background-color: rgba(235, 59, 35, 0.849);
+    font-weight: 600;
+}

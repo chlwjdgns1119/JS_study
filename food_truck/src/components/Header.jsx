@@ -8,6 +8,8 @@ import Festival from './Festival';
 import Market from './Market';
 import Community from './Community';
 import Search from './Search';
+import LoginButton from "./LoginButton";
+import RegisterButton from "./RegisterButon";
 
 const Header = () => {
     return(
@@ -27,12 +29,8 @@ const Header = () => {
                         <Community />
                         <Search />
                         <div className="navbar-auth">   
-                            <div className="button">
-                                로그인
-                            </div>
-                            <div className="button">
-                                회원가입
-                            </div>
+                            <LoginButton />
+                            <RegisterButton />
                         </div>
                     </div>
                 </div>

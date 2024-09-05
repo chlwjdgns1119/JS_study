@@ -1,4 +1,25 @@
 .searchbar {
     display: flex;
     align-items: center;
+    padding-top: 5px;
+    position: relative;
+}
+
+.searchbar > input {
+    border: 1px solid rgb(228, 107, 26);
+    border-radius: 20px;
+    width: 200px;
+    height: 5px;
+    padding: 10px;
+}
+
+.searchbar > input:focus {
+    outline: none;
+}
+
+
+.search-icon {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
 }

@@ -1,8 +1,12 @@
 import "./Search.css"
+import { IoMdSearch } from "react-icons/io";
 
 const Search = () => {
     return(
-        <div className="searchbar">검색바</div>
+        <div className="searchbar">
+            <input type="text"/>
+            <IoMdSearch className="search-icon" onClick={()=>{console.log("click")}}/>
+        </div>
     );
 };
 

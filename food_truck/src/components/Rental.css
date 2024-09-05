@@ -2,9 +2,10 @@
     display: flex;
     align-items: center;
     position: relative;
+    padding: 10px;
 }
 
-.dropdown-item {
+.dropdown-rental {
     position: absolute;
     top: 100%;
     margin: 0;
@@ -18,20 +19,21 @@
     flex-direction: column; 
     justify-content: center; 
     align-items: center;
-    gap: 20px;
     padding-bottom: 10px;
 }
 
-.dropdown-item > li {
-    text-align: center; /* 가운데 정렬 */
-    padding: 5px 0; /* 패딩으로 항목 높이 조정 */
+.dropdown-rental > li {
+    text-align: center; 
+    padding: 5px 0; 
     display:inline-block; 
     text-align:center;
     margin-top: 10px;
 }
 
-.dropdown-item > li > a {
+.dropdown-rental > li > a {
     color:darkslategray
 }
+
+
 
 
