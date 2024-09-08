@@ -5,7 +5,7 @@ const Search = () => {
     return(
         <div className="searchbar">
             <input type="text"/>
-            <IoMdSearch className="search-icon" onClick={()=>{console.log("click")}}/>
+            <IoMdSearch className="search-icon" />
         </div>
     );
 };

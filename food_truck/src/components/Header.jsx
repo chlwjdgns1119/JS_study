@@ -1,8 +1,5 @@
 import "./Header.css"
 import brand_logo from '../assets/brand_logo.png';
-import instagram_logo from '../assets/instagram_logo.png';
-import naverblog_logo from '../assets/naverblog_logo.png';
-import youtube_logo from '../assets/youtube_logo.png';
 import Rental from './Rental';
 import Festival from './Festival';
 import Market from './Market';
@@ -10,6 +7,10 @@ import Community from './Community';
 import Search from './Search';
 import LoginButton from "./LoginButton";
 import RegisterButton from "./RegisterButon";
+import { RiInstagramFill } from "react-icons/ri";
+import { SiNaver } from "react-icons/si";
+import { FaYoutube } from "react-icons/fa";
+
 
 const Header = () => {
     return(
@@ -18,9 +19,12 @@ const Header = () => {
                 <img src={brand_logo} />
                 <div className="navbar-left">
                     <div className="navbar-social-media">
-                        <img src={instagram_logo} onClick={()=>{window.open("https://www.instagram.com/")}} />
+                        <RiInstagramFill className="navbar-instagram-icon" onClick={()=>{window.open("https://www.instagram.com/")}} />
+                        <SiNaver className="navbar-naver-icon" onClick={()=>{window.open("https://www.naver.com/")}} />
+                        <FaYoutube className="navbar-youtube-icon" onClick={()=>{window.open("https://www.youtube.com/")}} />
+                        {/* <img src={instagram_logo} onClick={()=>{window.open("https://www.instagram.com/")}} />
                         <img src={naverblog_logo} onClick={()=>{window.open("https://www.naver.com/")}} />
-                        <img src={youtube_logo} onClick={()=>{window.open("https://www.youtube.com/")}} />
+                        <img src={youtube_logo} onClick={()=>{window.open("https://www.youtube.com/")}} /> */}
                     </div>
                     <div className="navbar-right">
                         <Rental />
