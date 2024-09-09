@@ -6,8 +6,8 @@ const Rental = () => {
     const [hover, setHover] = useState(false);
 
     return(
-        <div className="main" onMouseOver={() => {setHover(true)}} onMouseOut={() => {setHover(false)}}>
-            <Link to='/rental'style={{ textDecoration: "none"}}>
+        <div className={`main ${hover ? `hovered` : ""}`} onMouseOver={() => {setHover(true)}} onMouseOut={() => {setHover(false)}}>
+            <Link className="rental" to='/rental'style={{ textDecoration: "none"}}>
                 <span>렌탈</span>
             </Link>
             {hover && 

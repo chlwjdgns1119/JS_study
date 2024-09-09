@@ -3,3 +3,19 @@
     align-items: center;
     padding: 10px;
 }
+
+.main:hover {
+    background-color: rgba(235, 59, 35, 0.849);
+}
+
+.main:hover > .market {
+    color: rgb(226, 226, 226);
+}
+
+.market {
+    color: rgba(235, 59, 35, 0.849);
+    color: rgba(235, 59, 35, 0.849);
+    height: 100%;
+    display: flex;
+    align-items: center;
+}

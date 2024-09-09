@@ -5,9 +5,29 @@
     padding: 10px;
 }
 
+.hovered {
+    background-color: rgba(235, 59, 35, 0.849);
+}
+
+.hovered > .rental {
+    color: rgb(226, 226, 226);
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+
+.rental {
+    color: rgba(235, 59, 35, 0.849);
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
 .dropdown-rental {
     position: absolute;
-    top: 100%;
+    top: 85%;
+    left: -10%;
     margin: 0;
     padding: 0;
     width: 120px;

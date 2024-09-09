@@ -6,8 +6,8 @@ const Community = () => {
     const [hover, setHover] = useState(false);
 
     return (
-        <div className="main" onMouseOver={() => {setHover(true)}} onMouseOut={() => {setHover(false)}}>
-            <Link to='/community'style={{ textDecoration: "none"}}>
+        <div className={`main ${hover ? `hovered` : ""}`} onMouseOver={() => {setHover(true)}} onMouseOut={() => {setHover(false)}}>
+            <Link className="community" to='/community'style={{ textDecoration: "none"}}>
                 <span>커뮤니티</span>
             </Link>
             {hover && 

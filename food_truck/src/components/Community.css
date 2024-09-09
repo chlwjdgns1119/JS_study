@@ -5,12 +5,25 @@
     padding: 10px;
 }
 
+.hovered {
+    background-color: rgba(235, 59, 35, 0.849);
+}
+
+.hovered > .community {
+    color: rgb(226, 226, 226);
+}
+
+.community {
+    color: rgba(235, 59, 35, 0.849);
+}
+
 .dropdown-community {
     position: absolute;
-    top: 100%;
+    top: 85%;
+    left: -10%;
     margin: 0;
     padding: 0;
-    width: 60px;
+    width: 90px;
     list-style: none;
     background-color: white;
     border: 1px solid rgb(226, 226, 226);
@@ -33,5 +46,6 @@
 .dropdown-community > li > a {
     color:darkslategray
 }
+
 
 
