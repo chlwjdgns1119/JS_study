@@ -1,9 +1,10 @@
 import './Content.css';
+import Itemlist from './Itemlist';
 
 const Content = () => {
     return(
         <div>
-            콘텐츠 영역
+            <Itemlist />
         </div>
     );
 };

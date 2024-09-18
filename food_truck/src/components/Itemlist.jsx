@@ -1,10 +1,15 @@
 import './Itemlist.css';
+import Item from './Item';
 
-const Itemlist = ({image_url}) => {
+const Itemlist = () => {
     
     return(
-        <div>
-            
+        <div className='itemlist-class'>
+            <Item score={ 3.5 } />
+            <Item />
+            <Item />
+            <Item />
+            <Item />
         </div>
     );
 };

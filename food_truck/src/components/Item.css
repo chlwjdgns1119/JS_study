@@ -1,0 +1,10 @@
+.item-class {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.item-class > img {
+    width: 200px;
+    height: auto;
+}
