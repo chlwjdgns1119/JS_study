@@ -1,9 +1,9 @@
-import './Content.css';
+import './Content.css'
 import Itemlist from './Itemlist';
 
 const Content = () => {
     return(
-        <div>
+        <div className='itemlist'>
             <Itemlist />
         </div>
     );
