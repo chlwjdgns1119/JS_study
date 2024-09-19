@@ -6,7 +6,7 @@
 }
 
 .item-class > img {
-    width: 240px;
+    width: 180px;
     height: auto;
 }
 
@@ -25,17 +25,23 @@
 }
 
 .item-explain {
-    width: 200px;
-    font-size: 18px;
+    width: 140px;
+    font-size: 15px;
 }
 
 .item-provider {
+    display: flex;
+    justify-content: center;
     font-family: 'Times New Roman', Times, Arial, Helvetica, sans-serif;
-    font-size: 13px;
+    font-size: 10px;
     font-weight: 700;
     color: rgb(146, 146, 146);
 }
 
 .item-content {
+    display: flex;
+    justify-items: center;
+    flex-flow: column;
     padding-top: 10px;
+    gap: 3px;
 }

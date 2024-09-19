@@ -8,7 +8,6 @@ const Item = ({score, reviewer}) => {
             <img src={Foodtruck_image}/>
             <div className='item-content'>
                 <div className='item-explain'>푸드트럭 설명란입니다. 줄바꿈도 확인 중입니다.</div>
-                <div className='item-provider'>이건희</div>
                 <div className='score-rating'>
                     {Array.from({ length: score-1 }, (_, index) => (
                         <FaStar key={index} />
@@ -16,6 +15,7 @@ const Item = ({score, reviewer}) => {
                     {!(Number.isInteger(score))&& <FaStarHalfAlt />}
                     <div className='score-notation'>({reviewer})</div>
                 </div>
+                <div className='item-provider'>이건희</div>
             </div>
         </div>
     );

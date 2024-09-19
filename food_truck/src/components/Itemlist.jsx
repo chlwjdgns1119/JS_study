@@ -11,23 +11,27 @@ const Itemlist = () => {
     return(
         <div className='itemlist-swiper'>
             <Swiper
+                
                 modules={[Pagination, Navigation]}
                 spaceBetween={10}
-                slidesPerView={3}
-                pagination={{
-                clickable: true, 
-                type: 'bullets',
-                }}
+                slidesPerView={5}
                 navigation={{
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
                 }}
             >
                 <SwiperSlide className='slide-item'><Item score={4.5} reviewer={64} /></SwiperSlide>
-                <SwiperSlide>Slide 2</SwiperSlide>
-                <SwiperSlide>Slide 3</SwiperSlide>
-                <SwiperSlide>Slide 3</SwiperSlide>
-                <SwiperSlide>Slide 3</SwiperSlide>
+                <SwiperSlide className='slide-item'><Item score={4.5} reviewer={64} /></SwiperSlide>
+                <SwiperSlide className='slide-item'><Item score={4.5} reviewer={64} /></SwiperSlide>
+                <SwiperSlide className='slide-item'><Item score={4.5} reviewer={64} /></SwiperSlide>
+                <SwiperSlide className='slide-item'><Item score={4.5} reviewer={64} /></SwiperSlide>
+                <SwiperSlide className='slide-item'><Item score={4.5} reviewer={64} /></SwiperSlide>
+                <SwiperSlide className='slide-item'><Item score={4.5} reviewer={64} /></SwiperSlide>
+                <SwiperSlide className='slide-item'><Item score={4.5} reviewer={64} /></SwiperSlide>
+                <SwiperSlide className='slide-item'><Item score={4.5} reviewer={64} /></SwiperSlide>
+                <SwiperSlide className='slide-item'><Item score={4.5} reviewer={64} /></SwiperSlide>
+                <SwiperSlide className='slide-item'><Item score={4.5} reviewer={64} /></SwiperSlide>
+                <SwiperSlide className='slide-item'><Item score={4.5} reviewer={64} /></SwiperSlide>
                 <div className="swiper-button-next"></div>
                 <div className="swiper-button-prev"></div>
             </Swiper>

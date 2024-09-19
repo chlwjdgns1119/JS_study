@@ -2,29 +2,25 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Navigation } from 'swiper/modules';
+import { Pagination, Navigation, Autoplay } from 'swiper/modules';
 import './Banner.css';
 import Slide1 from '../assets/Slide1.png';
  
 const Banner = () => {
   return (
-    <div>
+    <div className='banner-swiper'>
       <Swiper
-          modules={[Pagination, Navigation]}
+        className='banner-wrapper'
+          modules={[Pagination, Navigation, Autoplay]}
           pagination={{
           clickable: true, 
           type: 'bullets',
           }}
-          navigation={{
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-          }}
+          autoplay={{ delay: 5000, disableOnInteraction: false }}
       >
-        <SwiperSlide><img src={Slide1}/></SwiperSlide>
+        <SwiperSlide className='banner-slide'><img src={Slide1}/></SwiperSlide>
         <SwiperSlide>Slide 2</SwiperSlide>
         <SwiperSlide>Slide 3</SwiperSlide>
-        <div className="swiper-button-next"></div>
-        <div className="swiper-button-prev"></div>
       </Swiper>
     </div>
   );
