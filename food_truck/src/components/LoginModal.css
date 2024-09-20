@@ -1,9 +1,24 @@
 .login_modal-window {
-    background-color: burlywood;
-    color: white;
+    background-color: white;
     position: fixed;
-    right: 50%;
-    bottom: 50%;
-    width: 250px;
-    height: 250px;
+    left: 50%;
+    top: 25%;
+    transform: translate(-50%, 0);
+    width: 400px;
+    height: 440px;
+    border-radius: 10px;
+}
+
+.login_modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.2); /* 배경을 어둡게 */
+    backdrop-filter: blur(2px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
 }
