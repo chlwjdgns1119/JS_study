@@ -1,13 +1,24 @@
 .itemlist-swiper {
     width: 1000px;
     height: auto;
+    position: relative;
 }
 
-.swiper-button-prev, .swiper-rtl .swiper-button-next {
+
+.itemlist-swiper-position {
+    position: static;
+}
+
+.swiper-button-prev {
     left: var(--swiper-navigation-sides-offset, 10%);
     right: auto;
 }
 
-.swiper-button-next, .swiper-rtl .swiper-button-prev {
-    right: -10px;
+.swiper-button-next {
+    right: -50px;
 }
+
+.swiper-button-prev {
+    left: -50px;
+}
+

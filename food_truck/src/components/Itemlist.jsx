@@ -11,7 +11,7 @@ const Itemlist = () => {
     return(
         <div className='itemlist-swiper'>
             <Swiper
-                
+                className='itemlist-swiper-position'
                 modules={[Pagination, Navigation]}
                 spaceBetween={10}
                 slidesPerView={5}
@@ -32,7 +32,7 @@ const Itemlist = () => {
                 <SwiperSlide className='slide-item'><Item score={4.5} reviewer={64} /></SwiperSlide>
                 <SwiperSlide className='slide-item'><Item score={4.5} reviewer={64} /></SwiperSlide>
                 <SwiperSlide className='slide-item'><Item score={4.5} reviewer={64} /></SwiperSlide>
-                <div className="swiper-button-next"></div>
+                <div className="swiper-button-next itemlist-button-next"></div>
                 <div className="swiper-button-prev"></div>
             </Swiper>
             {/* <Item score={ 4.5 } reviewer={183}/>

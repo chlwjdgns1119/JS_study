@@ -1,4 +1,16 @@
+.content {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: 50px;
+}
+
 .itemlist {
     display: flex;
-    justify-content: center;
+    flex-flow: column;
+    justify-content: flex-start;
+}
+
+.itemlist-title {
+    font-size: 50px;
 }
