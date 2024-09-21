@@ -7,6 +7,50 @@
     width: 400px;
     height: 440px;
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login_modal-window > img {
+    height: 20%;
+    width: auto;
+    margin-top: 30px;
+}
+
+.login_modal-window > form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.login_modal-window > form > input {
+    width: 350px;
+    height: 40px;
+    border: solid 1px rgb(228, 107, 26);
+    border-radius: 5px;
+    font-family: 'Times New Roman', Times, Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: rgb(146, 146, 146);
+}
+
+.login_modal-window > form > button {
+    width: 350px;
+    height: 40px;
+    border: solid 1px white;
+    border-radius: 5px;
+    background-color: rgb(228, 107, 26);
+    color: white;
+    font-size: 15px;
+    font-weight: 300;
+    cursor: pointer;
+}
+
+.login_modal-window .login_modal-singIn-modal {
+    display: flex;
+    gap: 5px;
 }
 
 .login_modal-overlay {
