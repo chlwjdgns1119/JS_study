@@ -13,20 +13,21 @@
 }
 
 .login_modal-window > img {
-    height: 20%;
+    height: 15%;
     width: auto;
-    margin-top: 30px;
+    margin-top: 40px;
+    margin-bottom: 20px;
 }
 
 .login_modal-window > form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 15px;
 }
 
 .login_modal-window > form > input {
-    width: 350px;
+    width: 320px;
     height: 40px;
     border: solid 1px rgb(228, 107, 26);
     border-radius: 5px;
@@ -37,8 +38,9 @@
 }
 
 .login_modal-window > form > button {
-    width: 350px;
-    height: 40px;
+    width: 320px;
+    height: 45px;
+    margin-top: 10px;
     border: solid 1px white;
     border-radius: 5px;
     background-color: rgb(228, 107, 26);
@@ -51,6 +53,21 @@
 .login_modal-window .login_modal-singIn-modal {
     display: flex;
     gap: 5px;
+    margin-top: 10px;
+}
+
+.login_modal-window .login_modal-singIn-modal > a {
+    font-family: 'Times New Roman', Times, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: 800;
+    color: rgb(108, 108, 108);
+}
+
+.login_modal-window .login_modal-singIn-modal > span {
+    color: rgb(108, 108, 108);
+    font-family: 'Times New Roman', Times, Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: 100;
 }
 
 .login_modal-overlay {
@@ -65,4 +82,86 @@
     justify-content: center;
     align-items: center;
     z-index: 10;
+}
+
+.login_modal-social-login {
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.login_modal-in_line {
+    position: relative;
+    bottom: -8px;
+    display: block;
+    margin: 0;
+    width: 100%;
+    height: 1px;
+    border: none;
+    background-color: rgb(146, 146, 146);
+}
+
+.login_modal-social-login_title {
+    padding: 0 8px;
+    margin-bottom: 10px;
+    font-size: 11px;
+    line-height: 16px;
+    letter-spacing: -.3px;
+    color: rgb(146, 146, 146);
+    z-index: 1;
+    background-color: white;
+}
+
+.login_modal-social-login-button {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.login_modal-social-login-button > button {
+    cursor: pointer;
+}
+
+.login_modal-kakaotalk-login-button {
+    border: none;
+    background-color: #FEE500;
+    border-radius: 5px;
+    padding-top: 3px;
+}
+
+.login_modal-kakaotalk-login-img {
+    background-color: #FEE500;
+    color: rgb(0, 0, 0);
+    width: 30px;
+    height: auto;
+}
+
+.login_modal-google-login-button {
+    border: none;
+    background-color: rgb(246, 246, 246);
+    border-radius: 5px;
+    height: 39px;
+}
+
+.login_modal-google-login-img {
+    width: 30px;
+    height: auto;
+    padding-top: 3px;
+}
+
+.login_modal-naver-login-button {
+    border: none;
+    background-color: #03C75A;
+    border-radius: 5px;
+    width: 42px;
+    height: 39px;
+    padding-top: 5px;
+}
+
+.login_modal-naver-login-img {
+    color: white;
+    width: 20px;
+    height: auto;
 }

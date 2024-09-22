@@ -2,6 +2,9 @@ import './LoginModal.css';
 import brand_logo from '../assets/brand_logo.png';
 import { useRef } from 'react';
 import { FcGoogle } from "react-icons/fc";
+import { RiKakaoTalkFill } from "react-icons/ri";
+import { SiNaver } from "react-icons/si";
+
 
 
 const LoginModal = ({ isOpen, closeModal}) => {
@@ -28,6 +31,21 @@ const LoginModal = ({ isOpen, closeModal}) => {
                         <a href='password'>비밀번호 찾기</a>
                         <span>|</span>
                         <a href='register'>회원가입</a>
+                    </div>
+                    <div className='login_modal-social-login'>
+                        <hr className='login_modal-in_line'/>
+                        <span className='login_modal-social-login_title'>소셜 로그인</span>
+                        <div className='login_modal-social-login-button'>
+                            <button className='login_modal-kakaotalk-login-button'>
+                                <RiKakaoTalkFill className='login_modal-kakaotalk-login-img'/>
+                            </button>
+                            <button className='login_modal-google-login-button'>
+                                <FcGoogle className='login_modal-google-login-img'/>
+                            </button>
+                            <button className='login_modal-naver-login-button'>
+                                <SiNaver className='login_modal-naver-login-img'/>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
