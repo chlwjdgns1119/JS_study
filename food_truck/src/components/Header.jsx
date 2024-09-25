@@ -1,8 +1,7 @@
 import "./Header.css"
 import brand_logo from '../assets/brand_logo.png';
-import Rental from './Rental';
-import Festival from './Festival';
-import Market from './Market';
+import Stage from './Stage';
+import FoodStall from './FoodStall';
 import Community from './Community';
 import Search from './Search';
 import LoginButton from "./LoginButton";
@@ -27,9 +26,8 @@ const Header = () => {
                         <img src={youtube_logo} onClick={()=>{window.open("https://www.youtube.com/")}} /> */}
                     </div>
                     <div className="navbar-right">
-                        <Rental />
-                        <Festival />
-                        <Market />
+                        <Stage />
+                        <FoodStall />
                         <Community />
                         <Search />
                         <div className="navbar-auth">   

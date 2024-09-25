@@ -1,4 +1,4 @@
-.main {
+.main-stage {
     display: flex;
     align-items: center;
     position: relative;
@@ -6,32 +6,35 @@
     z-index: 3;
 }
 
-.hovered {
+.hovered-stage {
     background-color: rgba(235, 59, 35, 0.849);
 }
 
-.hovered > .rental {
+.hovered-stage > .stage {
     color: rgb(226, 226, 226);
     height: 100%;
     display: flex;
     align-items: center;
 }
 
+.hovered-stage > .dropdown-item-link {
+    color: rgb(226, 226, 226);
+}
 
-.rental {
+
+.stage {
     color: rgba(235, 59, 35, 0.849);
     height: 100%;
     display: flex;
     align-items: center;
 }
 
-.dropdown-rental {
+.dropdown-stage {
     position: absolute;
     top: 85%;
     left: -10%;
     margin: 0;
     padding: 0;
-    width: 120px;
     list-style: none;
     background-color: white;
     border: 1px solid rgb(226, 226, 226);
@@ -40,21 +43,29 @@
     flex-direction: column; 
     justify-content: center; 
     align-items: center;
-    padding-bottom: 10px;
+    padding: 0;
+    display: flex;
 }
 
-.dropdown-rental > li {
-    text-align: center; 
-    padding: 5px 0; 
-    display:inline-block; 
-    text-align:center;
-    margin-top: 10px;
+.dropdown-stage > .dropdown-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90px;
+    height: 50px;
 }
 
-.dropdown-rental > li > a {
-    color:darkslategray
+.dropdown-stage > .dropdown-item-top {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.dropdown-stage > .dropdown-item-bottom {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 
-
-
+.dropdown-stage > .dropdown-item > .dropdown-item-link {
+    color: darkslategray;
+}
