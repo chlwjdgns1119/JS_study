@@ -4,12 +4,55 @@
     position: relative;
     padding: 10px;
     z-index: 3;
+    color: rgba(235, 59, 35, 0.849);
+    display: flex;
+    align-items: center;
 }
 
 .hovered-foodstall {
     background-color: rgba(235, 59, 35, 0.849);
     color: rgb(226, 226, 226);
-    height: 100%;
+}
+
+.dropdown-foodstall {
+    position: absolute;
+    top: 85%;
+    left: -10%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background-color: white;
+    border: 1px solid rgb(226, 226, 226);
+    border-radius: 5px;
     display: flex;
+    flex-direction: column; 
+    justify-content: center; 
     align-items: center;
+    padding: 0;
+    display: flex;
+}
+
+.dropdown-foodstall > .dropdown-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90px;
+    height: 50px;
+}
+
+.dropdown-foodstall > .dropdown-item-top {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.foodstall-dropdown-item-link {
+    color: darkslategray;
+}
+
+.dropdown-foodstall > .hovered-foodstall {
+    background-color: rgba(235, 59, 35, 0.849);
+}
+
+.dropdown-foodstall > .hovered-foodstall > .foodstall-dropdown-item-link {
+    color: rgb(226, 226, 226);
 }

@@ -12,19 +12,16 @@
 
 .hovered-stage > .stage {
     color: rgb(226, 226, 226);
-    height: 100%;
     display: flex;
     align-items: center;
 }
 
-.hovered-stage > .dropdown-item-link {
+.dropdown-stage > .hovered-stage > .stage-dropdown-item-link {
     color: rgb(226, 226, 226);
 }
 
-
 .stage {
     color: rgba(235, 59, 35, 0.849);
-    height: 100%;
     display: flex;
     align-items: center;
 }
@@ -66,6 +63,6 @@
 }
 
 
-.dropdown-stage > .dropdown-item > .dropdown-item-link {
+.stage-dropdown-item-link {
     color: darkslategray;
 }

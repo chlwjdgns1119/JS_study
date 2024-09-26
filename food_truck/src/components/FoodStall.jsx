@@ -9,9 +9,19 @@ const FoodStall = () => {
 
     return (
        <div className={`main-foodstall ${main_hover ? `hovered-foodstall` : ""}`} onMouseOver={() => {setMainHover(true)}} onMouseOut={() => {setMainHover(false)}}>
-            <span>무대</span>
-            
-       </div> 
+            노점
+
+            {main_hover &&
+                <div className='dropdown-foodstall'>
+                    <div className={`dropdown-item dropdown-item-top ${dropdown_hover===1 ? `hovered-foodstall` : ""}`} 
+                        onMouseOver={() => {setDropdownHover(1)}} 
+                        onMouseOut={() => {setDropdownHover(false)}}
+                    >
+                        <Link className='foodstall-dropdown-item-link' to='/foodstall/foodtruck' style={{ textDecoration: "none"}}>푸드 트럭</Link>
+                    </div>
+                </div>
+            }            
+       </div>
     );
 }
 

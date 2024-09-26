@@ -18,13 +18,13 @@ const Stage = () => {
                         onMouseOver={() => {setDropdownHover(1)}} 
                         onMouseOut={() => {setDropdownHover(false)}}
                     >
-                        <Link className='dropdown-item-link' to='/rental/foodtruck' style={{ textDecoration: "none"}}>무대 설치</Link>
+                        <Link className='stage-dropdown-item-link' to='/rental/foodtruck' style={{ textDecoration: "none"}}>무대 설치</Link>
                     </div>
                     <div className={`dropdown-item dropdown-item-bottom ${dropdown_hover===2 ? `hovered-stage` : ""}`} 
                         onMouseOver={() => {setDropdownHover(2)}} 
                         onMouseOut={() => {setDropdownHover(false)}}
                     >
-                        <Link className='dropdown-item-link' to='/rental/equipment' style={{ textDecoration: "none"}}>장비 렌탈</Link>
+                        <Link className='stage-dropdown-item-link' to='/rental/equipment' style={{ textDecoration: "none"}}>장비 렌탈</Link>
                     </div>
                 </ div>
             }
