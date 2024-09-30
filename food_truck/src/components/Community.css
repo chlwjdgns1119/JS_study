@@ -1,30 +1,26 @@
-.main {
+.main-community {
     display: flex;
     align-items: center;
     position: relative;
     padding: 10px;
     z-index: 3;
-}
-
-.hovered {
-    background-color: rgba(235, 59, 35, 0.849);
-}
-
-.hovered > .community {
-    color: rgb(226, 226, 226);
-}
-
-.community {
     color: rgba(235, 59, 35, 0.849);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.hovered-community {
+    background-color: rgba(235, 59, 35, 0.849);
+    color: rgb(226, 226, 226);
 }
 
 .dropdown-community {
     position: absolute;
     top: 85%;
-    left: -10%;
+    left: -5%;
     margin: 0;
     padding: 0;
-    width: 90px;
     list-style: none;
     background-color: white;
     border: 1px solid rgb(226, 226, 226);
@@ -33,20 +29,36 @@
     flex-direction: column; 
     justify-content: center; 
     align-items: center;
-    padding-bottom: 10px;
+    padding: 0;
+    display: flex;
 }
 
-.dropdown-community > li {
-    text-align: center; /* 가운데 정렬 */
-    padding: 5px 0; /* 패딩으로 항목 높이 조정 */
-    display:inline-block; 
-    text-align:center;
-    margin-top: 10px;
+.dropdown-community > .dropdown-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 40px;
 }
 
-.dropdown-community > li > a {
-    color:darkslategray
+.dropdown-community > .dropdown-item-top {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
+.dropdown-community > .dropdown-item-bottom {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
 
+.community-dropdown-item-link {
+    color: darkslategray;
+}
 
+.dropdown-community > .hovered-community {
+    background-color: rgba(235, 59, 35, 0.849);
+}
+
+.dropdown-community > .hovered-community > .community-dropdown-item-link {
+    color: rgb(226, 226, 226);
+}

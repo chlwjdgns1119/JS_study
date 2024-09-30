@@ -19,6 +19,12 @@ const FoodStall = () => {
                     >
                         <Link className='foodstall-dropdown-item-link' to='/foodstall/foodtruck' style={{ textDecoration: "none"}}>푸드 트럭</Link>
                     </div>
+                    <div className={`dropdown-item dropdown-item-bottom ${dropdown_hover===2 ? `hovered-foodstall` : ""}`} 
+                        onMouseOver={() => {setDropdownHover(2)}} 
+                        onMouseOut={() => {setDropdownHover(false)}}
+                    >
+                        <Link className='foodstall-dropdown-item-link' to='/foodstall/tentstall' style={{ textDecoration: "none"}}>포장 마차</Link>
+                    </div>
                 </div>
             }            
        </div>

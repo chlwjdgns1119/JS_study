@@ -12,13 +12,16 @@
 .swiper-button-prev {
     left: var(--swiper-navigation-sides-offset, 10%);
     right: auto;
+    z-index: 5;
 }
 
 .swiper-button-next {
     right: -50px;
+    z-index: 5;
 }
 
 .swiper-button-prev {
     left: -50px;
+    z-index: 5;
 }
 

@@ -13,4 +13,10 @@
 
 .itemlist-title {
     font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.itemlist-explain {
+    margin-left: 10px;
+    color: rgb(64, 64, 64);
 }

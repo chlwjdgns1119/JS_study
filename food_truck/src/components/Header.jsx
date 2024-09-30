@@ -2,6 +2,7 @@ import "./Header.css"
 import brand_logo from '../assets/brand_logo.png';
 import Stage from './Stage';
 import FoodStall from './FoodStall';
+import Announce from './Announce';
 import Community from './Community';
 import Search from './Search';
 import LoginButton from "./LoginButton";
@@ -28,6 +29,7 @@ const Header = () => {
                     <div className="navbar-right">
                         <Stage />
                         <FoodStall />
+                        <Announce />
                         <Community />
                         <Search />
                         <div className="navbar-auth">   
