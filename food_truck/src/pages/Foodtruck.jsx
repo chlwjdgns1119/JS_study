@@ -1,6 +1,12 @@
+import Header from '../components/Header';
+
 const Foodtruck = () => {
     return(
-        <div>Foodtruck입니다.</div>
+        <div>
+            <Header />
+            
+            <div>Foodtruck입니다.</div>
+        </div>
     )
 }
 

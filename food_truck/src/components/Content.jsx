@@ -11,11 +11,12 @@ const Content = () => {
             </div>
             <div className='itemlist'>
                 <div className='itemlist-title'>음식 왕초보들을 위한 레시피!!</div>
-                <div className='itemlist-explain'>시중 인기 음식 레시피로 맛있는 요리를 만들봐요!</div>
+                <div className='itemlist-explain'>시중 인기 음식 레시피로 맛있는 요리를 만들어봐요!</div>
                 <Itemlist />
             </div>
             <div className='itemlist'>
-                <div className='itemlist-title'>Hot한 푸드트럭</div>
+                <div className='itemlist-title'>다양한 무대 알아보기 {">"} </div>
+                <div className='itemlist-explain'>인기 있었던 무대들!!</div>
                 <Itemlist />
             </div>
         </div>
