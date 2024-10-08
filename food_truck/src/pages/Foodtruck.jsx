@@ -1,11 +1,11 @@
 import Header from '../components/Header';
+import FoodtruckTab from '../components/FoodtruckTab'
 
 const Foodtruck = () => {
     return(
         <div>
             <Header />
-            
-            <div>Foodtruck입니다.</div>
+            <FoodtruckTab />
         </div>
     )
 }

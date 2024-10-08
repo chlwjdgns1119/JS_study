@@ -1,4 +1,10 @@
 import './FoodtruckTab.css';
+import { MdOutlineFoodBank } from "react-icons/md";
+import { RiDrinks2Line } from "react-icons/ri";
+import { GiNoodles } from "react-icons/gi";
+import { PiBowlFood } from "react-icons/pi";
+
+
 
 const FoodtruckTab = () => {
     return(
@@ -7,15 +13,19 @@ const FoodtruckTab = () => {
                 전체
             </div>
             <div className="foodtrucktab-item">
+                <MdOutlineFoodBank className='meals-icon'/>
                 식사류
             </div>
             <div className="foodtrucktab-item">
+                <RiDrinks2Line className="beverages-icon" />
                 음료류
             </div>
             <div className="foodtrucktab-item">
+                <GiNoodles className="noodles-icon" />
                 면류
             </div>
             <div className="foodtrucktab-item">
+                <PiBowlFood className='bowls-icon' />
                 덮밥류
             </div>
             <div className="foodtrucktab-item">
