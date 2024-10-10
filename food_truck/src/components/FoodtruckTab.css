@@ -11,6 +11,7 @@
     flex-direction: column;
     align-items: center;
     height: 60px;
+    width: 60px;
 }
 
 .foodtrucktab-item > .meals-icon {
@@ -36,5 +37,55 @@
     margin-bottom: auto;
 }
 
+.foodtrucktab-item > .tteokbokki-icon {
+    width: 50px;
+    padding: 5px;
+    height: auto;
+    margin-bottom: auto;
+}
 
+.foodtrucktab-item > .pizza-icon {
+    font-size: 36px;
+    padding: 5px;
+    margin-bottom: auto;
+}
 
+.foodtrucktab-item > .dumpling-icon {
+    font-size: 30px;
+    padding: 5px;
+    margin-bottom: auto;
+}
+
+.foodtrucktab-item > .sushi-icon {
+    font-size: 38px;
+    padding: 2px;
+    margin-bottom: auto;
+}
+
+.foodtrucktab-item > .bibimbap-icon {
+    width: 40px;
+    padding: 2px;
+    height: auto;
+    margin-bottom: auto;
+}
+
+.foodtrucktab-item > .lunchbox-icon {
+    width: 36px;
+    padding: 2px;
+    height: auto;
+    margin-bottom: auto;
+}
+
+.foodtrucktab-item > .takoyaki-icon {
+    width: 50px;
+    padding: 3px;
+    height: auto;
+    margin-bottom: auto;
+}
+
+.foodtrucktab-item > .shavedice-icon {
+    width: 34px;
+    padding: 2px;
+    height: auto;
+    margin-bottom: auto;
+}
