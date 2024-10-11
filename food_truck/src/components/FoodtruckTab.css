@@ -1,37 +1,56 @@
 .foodtrucktab-list {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 16px;
     margin-top: 20px;
 }
 
 .foodtrucktab-item {
+    color: rgb(96, 96, 96);
     font-size: 14px;
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 60px;
     width: 60px;
+    cursor: pointer;
+}
+
+.foodtrucktab-list > .foodtrucktab-hovered {
+    color: black;
+    padding-bottom: 10px;
+    border-bottom: solid rgba(235, 59, 35, 0.849);
+}
+
+.foodtrucktab-item > .all-icon {
+    color: black;
+    font-size: 26px;
+    padding: 8px;
+    margin-bottom: auto;
 }
 
 .foodtrucktab-item > .meals-icon {
+    color: black;
     font-size: 36px;
     padding: 5px;
 }
 
 .foodtrucktab-item > .beverages-icon {
+    color: black;
     font-size: 28px;
     padding: 5px;
     margin-bottom: auto;
 }
 
 .foodtrucktab-item > .noodles-icon {
+    color: black;
     font-size: 28px;
     padding: 5px;
     margin-bottom: auto;
 }
 
 .foodtrucktab-item > .bowls-icon {
+    color: black;
     font-size: 50px;
     padding: 5px;
     margin-bottom: auto;
@@ -45,18 +64,21 @@
 }
 
 .foodtrucktab-item > .pizza-icon {
+    color: black;
     font-size: 36px;
     padding: 5px;
     margin-bottom: auto;
 }
 
 .foodtrucktab-item > .dumpling-icon {
+    color: black;
     font-size: 30px;
     padding: 5px;
     margin-bottom: auto;
 }
 
 .foodtrucktab-item > .sushi-icon {
+    color: black;
     font-size: 38px;
     padding: 2px;
     margin-bottom: auto;

@@ -1,4 +1,5 @@
 import './FoodtruckTab.css';
+import { MdDensitySmall } from "react-icons/md";
 import { MdOutlineFoodBank } from "react-icons/md";
 import { RiDrinks2Line } from "react-icons/ri";
 import { GiNoodles } from "react-icons/gi";
@@ -11,11 +12,17 @@ import bibimbap from "../assets/bibimbap.png";
 import lunchbox from "../assets/lunchbox.png";
 import takoyaki from "../assets/takoyaki.png";
 import shavedice from "../assets/shavedice.png";
+import { useState } from 'react';
 
 const FoodtruckTab = () => {
+
+    const [tabFade, set_tabFade] = useState(false);
+
+
     return(
         <div className="foodtrucktab-list">
-            <div className="foodtrucktab-item">
+            <div className={`foodtrucktab-item ${tabFade ? `foodtrucktab-hovered` : ""}`}  onClick={()=> {set_tabFade(1)}}>
+                <MdDensitySmall className='all-icon'/>
                 전체
             </div>
             <div className="foodtrucktab-item">
