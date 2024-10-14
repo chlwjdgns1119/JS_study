@@ -22,8 +22,8 @@ const FoodtruckTab = () => {
 
 
     return(
-        <div>
-            <div className="foodtrucktab-list">
+        <div className='foodtrucktab-list'>
+            <div className="foodtrucktab-itemlist">
                 <div className={`foodtrucktab-item ${(tabFade===1) ? `foodtrucktab-hovered` : ""}`}  onClick={()=> {set_tabFade(1)}}>
                     <MdDensitySmall className='all-icon'/>
                     전체
@@ -75,9 +75,9 @@ const FoodtruckTab = () => {
                 <div className={`foodtrucktab-item ${(tabFade===13) ? `foodtrucktab-hovered` : ""}`}  onClick={()=> {set_tabFade(13)}}>
                     <img src={shavedice}  className='shavedice-icon'/>
                     디저트류 
-                </div>
+                </div>    
+                <FoodtruckTabDetail />
             </div>
-            <FoodtruckTabDetail />
         </div>
     )
 }

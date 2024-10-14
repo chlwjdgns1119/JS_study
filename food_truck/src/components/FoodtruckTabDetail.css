@@ -1,14 +1,23 @@
-.foodtrucktab-detil-list {
+.foodtrucktab-detail-list {
     display: flex;
     border-top: solid 1px rgb(226, 226, 226);
     border-bottom: solid 1px rgb(226, 226, 226);
     background-color: rgba(245, 245, 245, 0.5);
     justify-content: center;
-    gap: 10px;
-    padding: 10px 0px 10px 0px;
+    width: 100vw;
+    position: absolute;
+    top: 81px;
 }
 
-.foodtrucktab-detil-list-item {
+.foodtrucktab-detail-itemlist {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 0px 10px 0px;
+    align-items: flex-start;
+}
+
+.foodtrucktab-detail-list-item {
     display: flex;
     justify-content: center;
     align-items: center;

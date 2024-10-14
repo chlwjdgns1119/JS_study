@@ -1,7 +1,15 @@
 .foodtrucktab-list {
     display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.foodtrucktab-itemlist {
+    display: flex;
     justify-content: center;
     gap: 16px;
+    width: min-content;
+    position: relative;
 }
 
 .foodtrucktab-item {
@@ -14,12 +22,13 @@
     width: 60px;
     cursor: pointer;
     padding-top: 8px;
+    padding-bottom: 10px;
+    border-bottom: solid 3px rgba(235, 59, 35, 0);
 }
 
 .foodtrucktab-list > .foodtrucktab-hovered {
     color: black;
-    padding-bottom: 10px;
-    border-bottom: solid rgba(235, 59, 35, 0.849);
+    border-bottom: solid 3px rgba(235, 59, 35, 0.849);
     background-color: rgba(240, 240, 240, 0.7);
 }
 
