@@ -19,7 +19,7 @@ import { useState } from 'react';
 const FoodtruckTab = () => {
 
     const [tabFade, set_tabFade] = useState(false);
-
+    const arr = ['커피', '에이드', '술'];
 
     return(
         <div className='foodtrucktab-list'>
@@ -76,7 +76,16 @@ const FoodtruckTab = () => {
                     <img src={shavedice}  className='shavedice-icon'/>
                     디저트류 
                 </div>    
-                <FoodtruckTabDetail />
+                <div className="foodtrucktab-detail-list" />
+                <div className='foodtrucktab-detail-itemlist'>
+                    {arr.map((item)=>{
+                        return(
+                            <div key={item} className='foodtrucktab-detail-list-item'>
+                                {item}
+                            </div>
+                        )
+                    })}
+                </div>
             </div>
         </div>
     )
