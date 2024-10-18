@@ -1,0 +1,46 @@
+.foodtruck-main-itemlist-item {
+    width: 360px;
+    border: solid 1px rgb(226, 226, 226);
+}
+
+.foodtruck-main-itemlist-item > img {
+    width: 100%;
+}
+
+.foodtruck-main-itemlist-item > .foodtruck-item-text {
+    display: flex;
+    flex-direction: column;
+    padding: 5px 10px 5px 10px;
+    gap: 5px;
+}
+
+.foodtruck-main-itemlist-item > .foodtruck-item-text > .foodtruck-item-title {
+    font-size: 24px;
+    font-weight: 200;
+}
+
+.foodtruck-main-itemlist-item > .foodtruck-item-text > .foodtruck-item-explain {
+    font-size: 16px;
+    font-family: "Do Hyeon", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    color: rgb(36, 36, 36)
+}
+
+.foodtruck-main-itemlist-item > .foodtruck-item-comment > .foodtruck-item-rate {
+    display: flex;
+    gap: 8px;
+}
+
+.foodtruck-main-itemlist-item > .foodtruck-item-comment > .foodtruck-item-rate > p {
+    margin: 0;
+}
+
+
+.foodtruck-main-itemlist-item > .foodtruck-item-comment > .foodtruck-item-rate > svg {
+    color: rgb(231, 231, 97);
+}
+
+.foodtruck-main-itemlist-item > .foodtruck-item-comment > .foodtruck-item-customers > svg {
+    color: rgb(78, 80, 71);
+}

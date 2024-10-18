@@ -90,16 +90,21 @@ const FoodtruckTab = () => {
                     <img src={shavedice}  className='shavedice-icon'/>
                     디저트류 
                 </div>    
-                <div className="foodtrucktab-detail-list" />
-                <div className='foodtrucktab-detail-itemlist'>
-                    {arr.map((item, index)=>{
-                        return(
-                            <div key={item} className={`foodtrucktab-detail-list-item ${(tabDetail===index) ? `foodtrucktab-detail-hovered` : ""}`} onClick={()=>{set_tabDetail(index)}} >
-                                {item}
-                            </div>
-                        )
-                    })}
-                </div>
+                
+                {
+                    tabDetailKey && <div className="foodtrucktab-detail-list" />
+                }
+                {tabDetailKey && 
+                    <div className='foodtrucktab-detail-itemlist'>
+                        {arr[tabDetailKey].map((item, index)=>{
+                            return(
+                                <div key={item} className={`foodtrucktab-detail-list-item ${(tabDetail===index) ? `foodtrucktab-detail-hovered` : ""}`} onClick={()=>{set_tabDetail(index)}} >
+                                    {item}
+                                </div>
+                            )
+                        })}
+                    </div>
+                }
             </div>
         </div>
     )
