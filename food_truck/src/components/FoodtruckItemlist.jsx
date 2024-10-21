@@ -4,7 +4,10 @@ import FoodtruckItem from './FoodtruckItem';
 
 const FoodtruckItemlist = () => {
     return(
-        <div>
+        <div className='fodotruck-main-itemlist'>
+            <FoodtruckItem />
+            <FoodtruckItem />
+            <FoodtruckItem />
             <FoodtruckItem />
         </div>
     );
