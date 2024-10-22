@@ -3,7 +3,7 @@ import FoodtruckItemlist from './FoodtruckItemlist';
 
 const FoodtruckItem = () => {
     return(
-        <div>
+        <div className='foodtruck-main'>
             <FoodtruckItemlist />
         </div>
     )

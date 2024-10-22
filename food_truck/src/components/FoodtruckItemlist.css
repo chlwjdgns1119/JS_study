@@ -1,3 +1,6 @@
-.foodtruck-main-itemlist {
-    display:
+.fodotruck-main-itemlist {
+    display: grid;
+    width: 80vw;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
 }

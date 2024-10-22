@@ -9,6 +9,13 @@ const FoodtruckItemlist = () => {
             <FoodtruckItem />
             <FoodtruckItem />
             <FoodtruckItem />
+            <FoodtruckItem />
+            <FoodtruckItem />
+            <FoodtruckItem />
+            <FoodtruckItem />
+            <FoodtruckItem />
+            <FoodtruckItem />
+            <FoodtruckItem />
         </div>
     );
 }
