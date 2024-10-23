@@ -22,9 +22,6 @@ const Header = () => {
                         <RiInstagramFill className="navbar-instagram-icon" onClick={()=>{window.open("https://www.instagram.com/")}} />
                         <SiNaver className="navbar-naver-icon" onClick={()=>{window.open("https://www.naver.com/")}} />
                         <FaYoutube className="navbar-youtube-icon" onClick={()=>{window.open("https://www.youtube.com/")}} />
-                        {/* <img src={instagram_logo} onClick={()=>{window.open("https://www.instagram.com/")}} />
-                        <img src={naverblog_logo} onClick={()=>{window.open("https://www.naver.com/")}} />
-                        <img src={youtube_logo} onClick={()=>{window.open("https://www.youtube.com/")}} /> */}
                     </div>
                     <div className="navbar-right">
                         <Stage />
