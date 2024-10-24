@@ -13,14 +13,14 @@ const FoodStall = () => {
 
             {main_hover &&
                 <div className='dropdown-foodstall'>
-                    <div className={`dropdown-item dropdown-item-top ${dropdown_hover===1 ? `hovered-foodstall` : ""}`} 
-                        onMouseOver={() => {setDropdownHover(1)}} 
+                    <div className={`dropdown-item dropdown-item-top ${dropdown_hover==='foodtruck' ? `hovered-foodstall` : ""}`} 
+                        onMouseOver={() => {setDropdownHover('foodtruck')}} 
                         onMouseOut={() => {setDropdownHover(false)}}
                     >
                         <Link className='foodstall-dropdown-item-link' to='/foodstall/foodtruck' style={{ textDecoration: "none"}}>푸드 트럭</Link>
                     </div>
-                    <div className={`dropdown-item dropdown-item-bottom ${dropdown_hover===2 ? `hovered-foodstall` : ""}`} 
-                        onMouseOver={() => {setDropdownHover(2)}} 
+                    <div className={`dropdown-item dropdown-item-bottom ${dropdown_hover==='tentstall' ? `hovered-foodstall` : ""}`} 
+                        onMouseOver={() => {setDropdownHover('tentstall')}} 
                         onMouseOut={() => {setDropdownHover(false)}}
                     >
                         <Link className='foodstall-dropdown-item-link' to='/foodstall/tentstall' style={{ textDecoration: "none"}}>포장 마차</Link>
