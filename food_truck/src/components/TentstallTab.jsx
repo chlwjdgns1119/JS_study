@@ -1,6 +1,13 @@
-import "./TenstallTab.css";
+import "./TentstallTab.css";
+import { useState } from "react";
 
-const TenstallTab = () => {
+const TentstallTab = () => {
+
+    const [category, setCategory] = useState();
+
+    const onSelect = (event) => {
+        setCategory(event.target.value);
+    }
 
     const temp_category = {
         "시설 및 인프라" : ['캐노피', '테이블 및 의자', '전기 및 조명', '소도구', '음향 장비', '안전 장비'],
@@ -17,17 +24,19 @@ const TenstallTab = () => {
     return(
         <div className="tentstalltab">
             <div className="tentstalltab-category"> 
-                <select >
-                    <option value="xx">Select your units</option>
-                    <option value="0">Minutes & Hours</option>
-                    <option value="1">Km & Miles</option>
+                <select className="tentstalltab-category-select" onChange={onSelect}>
+                    <option value="0">전체</option>
+                    <option value="1">시설 및 인프라</option>
+                    <option value="2">주방 설비</option>
+                    <option value="3">식자재</option>
+                    <option value="4">기타</option>
                 </select>
             </div>
             <div className="tentstalltab-category-item">
-
+                
             </div>
         </div>
     );
 }
 
-export default TenstallTab;
+export default TentstallTab;
