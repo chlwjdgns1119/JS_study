@@ -4,7 +4,7 @@ import Foodtruck from "./pages/Foodtruck";
 import Festival from "./pages/Festival"
 import Marketplace from "./pages/Marketplace";
 import Community from "./pages/Community"
-import Tentstall from "./pages/Tenstall";
+import Tentstall from "./pages/Tentstall";
 
 const App = () => {
     return (

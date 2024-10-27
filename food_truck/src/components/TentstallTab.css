@@ -1,0 +1,38 @@
+.tentstalltab {
+    display: flex;
+    justify-content: center;
+}
+
+.tentstalltab > .tentstalltab-category {
+    display: flex;
+    
+}
+
+.tentstalltab > .tentstalltab-category > .tentstalltab-category-item {
+    display: flex;
+    justify-content: center;
+    width: 110px;
+    padding: 10px 10px 10px 10px;
+    border-top: solid 3px rgba(235, 59, 35, 0.849);
+    border-right: solid 2px rgba(235, 59, 35, 0.849);
+    border-bottom: solid 3px rgba(235, 59, 35, 0.849);
+    color: rgba(235, 59, 35, 0.849);
+    background-color: rgb(246, 246, 246);
+    font-weight: 500;
+}
+
+.tentstalltab > .tentstalltab-category > .tentstalltab-category-item-end {
+    display: flex;
+    justify-content: center;
+    width: 110px;
+    padding: 10px 10px 10px 10px;
+    border-top: solid 3px rgba(235, 59, 35, 0.849);
+    border-bottom: solid 3px rgba(235, 59, 35, 0.849);
+    color: rgba(235, 59, 35, 0.849);
+    background-color: rgb(246, 246, 246);
+}
+
+.tentstalltab > .tentstalltab-category > .tentstalltab-category-hovered {
+    color: rgb(246, 246, 246);
+    background-color: rgba(235, 59, 35, 0.849);;
+}
