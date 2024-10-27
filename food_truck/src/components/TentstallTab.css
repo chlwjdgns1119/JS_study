@@ -1,11 +1,12 @@
 .tentstalltab {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
 }
 
 .tentstalltab > .tentstalltab-category {
     display: flex;
-    
 }
 
 .tentstalltab > .tentstalltab-category > .tentstalltab-category-item {
@@ -17,8 +18,8 @@
     border-right: solid 2px rgba(235, 59, 35, 0.849);
     border-bottom: solid 3px rgba(235, 59, 35, 0.849);
     color: rgba(235, 59, 35, 0.849);
-    background-color: rgb(246, 246, 246);
-    font-weight: 500;
+    background-color: rgb(252, 252, 252);
+    font-size: 18px;
 }
 
 .tentstalltab > .tentstalltab-category > .tentstalltab-category-item-end {
@@ -29,10 +30,36 @@
     border-top: solid 3px rgba(235, 59, 35, 0.849);
     border-bottom: solid 3px rgba(235, 59, 35, 0.849);
     color: rgba(235, 59, 35, 0.849);
-    background-color: rgb(246, 246, 246);
+    background-color: rgb(252, 252, 252);
 }
 
 .tentstalltab > .tentstalltab-category > .tentstalltab-category-hovered {
-    color: rgb(246, 246, 246);
-    background-color: rgba(235, 59, 35, 0.849);;
+    color: rgb(252, 252, 252);
+    background-color: rgba(235, 59, 35, 0.849);
+    cursor: pointer;
+}
+
+.tentstalltab > .tentstalltab-category-detail {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(100px,1fr));
+    border: solid 2px rgba(96, 96, 96, 0.5);
+    background-color: rgb(252, 252, 252);
+}
+
+.tentstalltab > .tentstalltab-category-detail > .tentstalltab-category-detail-item {
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    color: rgb(86, 86, 86);
+    font-weight: 500;
+    font-size: 14px;
+    font-family: 'Times New Roman', Times, Arial, Helvetica, sans-serif;
+    cursor: pointer;
+}
+
+.tentstalltab > .tentstalltab-category-detail > .tentstalltab-detail-hovered {
+    font-weight: 900;
+    color: rgb(36, 36, 36);
 }

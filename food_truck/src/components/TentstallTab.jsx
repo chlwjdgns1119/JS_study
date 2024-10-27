@@ -3,11 +3,9 @@ import { useState } from "react";
 
 const TentstallTab = () => {
 
-    const [category, setCategory] = useState();
-
-    const onSelect = (event) => {
-        setCategory(event.target.value);
-    }
+    const [category_hovered, setHovered] = useState(false);
+    const [category, setCategory] = useState(false);
+    const [detail_hovered, setDetail] = useState(false);
 
     const temp_category = {
         "시설 및 인프라" : ['캐노피', '테이블 및 의자', '전기 및 조명', '소도구', '음향 장비', '안전 장비'],
@@ -22,19 +20,70 @@ const TentstallTab = () => {
         <div className="tentstalltab">
             <div className="tentstalltab-category"> 
                 <div 
-                    className={`tentstalltab-category-item ${category ? `tentstalltab-category-hovered`: ""}`} 
-                    onMouseOver={()=>{setCategory('시설 및 인프라')}} 
-                    onMouseOut={()=>{setCategory('시설 및 인프라')}}>
+                    className={`tentstalltab-category-item ${(category_hovered===0 || category==false) ? `tentstalltab-category-hovered`: ""}`} 
+                    onMouseOver={()=>{setHovered(0)}} 
+                    onMouseOut={()=>{setHovered(false)}}
+                    onClick={()=>{setCategory('시설 및 인프라')}}
+                >
+                    전체
+                </div>
+                <div 
+                    className={`tentstalltab-category-item ${(category_hovered===1 || category==='시설 및 인프라') ? `tentstalltab-category-hovered`: ""}`} 
+                    onMouseOver={()=>{setHovered(1)}} 
+                    onMouseOut={()=>{setHovered(false)}}
+                    onClick={()=>{setCategory('시설 및 인프라')}}
+                >
                     시설 및 인프라
                 </div>
-                <div className="tentstalltab-category-item">조리 기구</div>
-                <div className="tentstalltab-category-item">조리 도구</div>
-                <div className="tentstalltab-category-item">보관 도구</div>
-                <div className="tentstalltab-category-item">식자재</div>
-                <div className="tentstalltab-category-item-end">기타</div>
+                <div 
+                    className={`tentstalltab-category-item ${(category_hovered===2 || category==='조리 기구') ? `tentstalltab-category-hovered`: ""}`} 
+                    onMouseOver={()=>{setHovered(2)}} 
+                    onMouseOut={()=>{setHovered(false)}}
+                    onClick={()=>{setCategory('조리 기구')}}
+                >
+                    조리 기구
+                </div>
+                <div 
+                    className={`tentstalltab-category-item ${(category_hovered===3 || category==='조리 도구') ? `tentstalltab-category-hovered`: ""}`} 
+                    onMouseOver={()=>{setHovered(3)}} 
+                    onMouseOut={()=>{setHovered(false)}}
+                    onClick={()=>{setCategory('조리 도구')}}
+                >
+                    조리 도구
+                </div>
+                <div 
+                    className={`tentstalltab-category-item ${(category_hovered===4 || category==='보관 도구') ? `tentstalltab-category-hovered`: ""}`} 
+                    onMouseOver={()=>{setHovered(4)}} 
+                    onMouseOut={()=>{setHovered(false)}}
+                    onClick={()=>{setCategory('보관 도구')}}
+                >
+                    보관 도구
+                </div>
+                <div 
+                    className={`tentstalltab-category-item ${(category_hovered===5 || category==='식자재') ? `tentstalltab-category-hovered`: ""}`} 
+                    onMouseOver={()=>{setHovered(5)}} 
+                    onMouseOut={()=>{setHovered(false)}}
+                    onClick={()=>{setCategory('식자재')}}
+                >
+                    식자재
+                </div>
+                <div 
+                    className={`tentstalltab-category-item-end ${(category_hovered===6 || category==='기타') ? `tentstalltab-category-hovered`: ""}`} 
+                    onMouseOver={()=>{setHovered(6)}} 
+                    onMouseOut={()=>{setHovered(false)}}
+                    onClick={()=>{setCategory('기타')}}
+                >
+                    기타
+                </div>
             </div>
-            <div className="tentstalltab-category-item">
-                
+            <div className="tentstalltab-category-detail">
+                <div className={`tentstalltab-category-detail-item ${detail_hovered ? `tentstalltab-detail-hovered` : ""}`} onClick={()=>{setDetail(1)}}>예시</div>
+                <div className="tentstalltab-category-detail-item">예시</div>
+                <div className="tentstalltab-category-detail-item">예시</div>
+                <div className="tentstalltab-category-detail-item">예시</div>
+                <div className="tentstalltab-category-detail-item">예시</div>
+                <div className="tentstalltab-category-detail-item">예시</div>
+                <div className="tentstalltab-category-detail-item">예시</div>
             </div>
         </div>
     );
