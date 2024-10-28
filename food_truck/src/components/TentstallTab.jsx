@@ -23,7 +23,7 @@ const TentstallTab = () => {
                     className={`tentstalltab-category-item ${(category_hovered===0 || category==false) ? `tentstalltab-category-hovered`: ""}`} 
                     onMouseOver={()=>{setHovered(0)}} 
                     onMouseOut={()=>{setHovered(false)}}
-                    onClick={()=>{setCategory('시설 및 인프라')}}
+                    onClick={()=>{setCategory(false)}}
                 >
                     전체
                 </div>
