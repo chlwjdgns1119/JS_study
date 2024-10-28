@@ -76,15 +76,20 @@ const TentstallTab = () => {
                     기타
                 </div>
             </div>
-            <div className="tentstalltab-category-detail">
-                <div className={`tentstalltab-category-detail-item ${detail_hovered ? `tentstalltab-detail-hovered` : ""}`} onClick={()=>{setDetail(1)}}>예시</div>
-                <div className="tentstalltab-category-detail-item">예시</div>
-                <div className="tentstalltab-category-detail-item">예시</div>
-                <div className="tentstalltab-category-detail-item">예시</div>
-                <div className="tentstalltab-category-detail-item">예시</div>
-                <div className="tentstalltab-category-detail-item">예시</div>
-                <div className="tentstalltab-category-detail-item">예시</div>
-            </div>
+            {
+                category &&
+                (
+                    <div className="tentstalltab-category-detail">
+                        {temp_category[category].map((item, index)=>{
+                            return(
+                                <div key={item} className={`tentstalltab-category-detail-item ${detail_hovered===index ? `tentstalltab-detail-hovered` : ""}`} onClick={()=>{setDetail(index)}}>
+                                    {item}
+                                </div>
+                            )
+                        })}
+                    </div>
+                )
+            }
         </div>
     );
 }
