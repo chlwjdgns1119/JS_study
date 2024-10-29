@@ -1,0 +1,21 @@
+.tentstall-main > .tentstall-main-filter > .tentstall-main-filter-sort {
+    display: flex;
+    font-family: "Noto Sans KR", sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    color: rgb(86, 86, 86);
+    gap: 5px;
+}
+
+.tentstall-main > .tentstall-main-filter > .tentstall-main-filter-sort > .sort-hovered {
+    color: black;
+}
+
+.tentstall-main > .tentstall-main-filter > .tentstall-main-filter-sort > div {
+    cursor: pointer;
+}
+
+.tentstall-main > .tentstall-main-filter > .tentstall-main-filter-sort > span {
+    cursor: pointer;
+    pointer-events : none;
+}
