@@ -1,3 +1,13 @@
+.tentstall-main > .tentstall-main-filter > .tentstall-main-filter-rent > .filter-state {
+    background-color: aqua;
+}
+
+.tentstall-main > .tentstall-main-filter > .tentstall-main-filter-rent > .filter-dropdown {
+    position: absolute;
+    top: 30px;
+    background-color: gray;
+}
+
 .tentstall-main > .tentstall-main-filter > .tentstall-main-filter-sort {
     display: flex;
     font-family: "Noto Sans KR", sans-serif;
@@ -11,6 +21,10 @@
     color: black;
 }
 
+.tentstall-main > .tentstall-main-filter > .tentstall-main-filter-sort > .sort-hovered > .tentstall-main-checkicon {
+    margin-right: 4px;
+    font-size: 14px;
+}
 .tentstall-main > .tentstall-main-filter > .tentstall-main-filter-sort > div {
     cursor: pointer;
 }
