@@ -1,37 +1,75 @@
+.tentstall-main {
+    display: flex;
+    justify-content: center;
+}
+
+.tentstall-main > .tentstall-main-filter {
+    display: flex;
+    align-items: center;
+    margin-right: 620px;
+    margin-top: 20px;
+}
+
 .tentstall-main > .tentstall-main-filter > .tentstall-main-filter-rent {
     position: relative;
+    margin-right: 30px;
 }
 
 .tentstall-main > .tentstall-main-filter > .tentstall-main-filter-rent > .filter-state {
+    font-family: "Do Hyeon", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
     display: flex;
     justify-content: space-around;
     align-items: center;
     width: 76px;
-    padding: 5px 4px 5px 4px;
+    padding: 7px 5px 8px 5px;
     border: solid 1px rgb(156, 156, 156);
     border-radius: 8px;
     gap: 10px;
+    cursor: pointer;
+}
+
+.tentstall-main > .tentstall-main-filter > .tentstall-main-filter-rent > .filter-state-toggle {
+    border: solid 1px black;
 }
 
 .tentstall-main > .tentstall-main-filter > .tentstall-main-filter-rent > .filter-state > .filter-state-down {
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .tentstall-main > .tentstall-main-filter > .tentstall-main-filter-rent > .filter-dropdown {
     display: flex;
     flex-direction: column;
     align-items: center;
+    box-sizing: border-box;
     position: absolute;
-    top: 40px;
+    top: 38px;
     width: 86px;
     border: solid 1px rgb(156, 156, 156);
     border-radius: 8px;
+    padding: 2px 2px 2px 2px;
+    background-color: white;
 }
 
 .tentstall-main > .tentstall-main-filter > .tentstall-main-filter-rent > .filter-dropdown > .filter-dropdown-item {
     box-sizing: border-box;
     width: 96%;
-    padding: 5px 8px 5px 9px;
+    padding: 7px 5px 8px 5px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: "Do Hyeon", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.tentstall-main > .tentstall-main-filter > .tentstall-main-filter-rent > .filter-dropdown >.filter-dropdown-item-selected {
+    background-color: rgba(235, 68, 46, 0.849);
+    color: rgb(252, 252, 252);
+}
+
+.tentstall-main > .tentstall-main-filter > .tentstall-main-filter-rent > .filter-dropdown > .filter-dropdown-item-hovered {
+    background-color: rgb(226, 226, 226);
 }
 
 .tentstall-main > .tentstall-main-filter > .tentstall-main-filter-sort {

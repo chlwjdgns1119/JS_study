@@ -9,6 +9,7 @@ const TentstallMain = () => {
 
     const [rent_toggle, setRentToggle] = useState(false);
     const [rent_state, setRentState] = useState('전체');
+    const [rent_hovered, setRentHovered] = useState(false);
     const [sort_checked, setSortchecked] = useState(1);
 
     const divRef = useRef(null);
@@ -17,10 +18,6 @@ const TentstallMain = () => {
         if (divRef.current && !divRef.current.contains(event.target)) {
             setRentToggle(false);
         }
-    };
-
-    const handleClickInside = (event) => {
-        event.stopPropagation();
     };
 
     useEffect(() => {
@@ -33,16 +30,49 @@ const TentstallMain = () => {
     return(
         <div className='tentstall-main'>
             <div className='tentstall-main-filter'>
-                <div className='tentstall-main-filter-rent' onClick={()=>{(rent_toggle ? setRentToggle(false): setRentToggle(true))}}  ref={divRef}>
-                   <div className='filter-state'>
+                <div className='tentstall-main-filter-rent' onClick={()=>{(rent_toggle ? setRentToggle(false): setRentToggle(true))}} ref={divRef}>
+                   <div className={`filter-state ${rent_toggle ? `filter-state-toggle` : ""}`}>
                         {rent_state}
                         <HiOutlineChevronDown className='filter-state-down'/>
                     </div>
                     {rent_toggle && (
                         <div className='filter-dropdown'>
-                            <div className='filter-dropdown-item'>전체</div>
-                            <div className='filter-dropdown-item'>구매</div>
-                            <div className='filter-dropdown-item'>대여</div>
+                            <div 
+                                className={
+                                    `filter-dropdown-item 
+                                    ${(rent_state==='전체') ? `filter-dropdown-item-selected` : ""}
+                                    ${(rent_hovered===1&&rent_state!=='전체') ? `filter-dropdown-item-hovered` : ""}`
+                                } 
+                                onClick={()=>{setRentState('전체')}}
+                                onMouseOver={()=>{setRentHovered(1)}}
+                                onMouseOut={()=>{setRentHovered(false)}}
+                            >
+                                전체
+                            </div>
+                            <div 
+                                className={
+                                    `filter-dropdown-item 
+                                    ${(rent_state==='구매') ? `filter-dropdown-item-selected` : ""}
+                                    ${(rent_hovered===2&&rent_state!=='구매') ? `filter-dropdown-item-hovered` : ""}`
+                                } 
+                                onClick={()=>{setRentState('구매')}}
+                                onMouseOver={()=>{setRentHovered(2)}}
+                                onMouseOut={()=>{setRentHovered(false)}}
+                            >
+                                구매
+                            </div>
+                            <div 
+                                className={
+                                    `filter-dropdown-item 
+                                    ${(rent_state==='대여') ? `filter-dropdown-item-selected` : ""}
+                                    ${(rent_hovered===3&&rent_state!=='대여') ? `filter-dropdown-item-hovered` : ""}`
+                                } 
+                                onClick={()=>{setRentState('대여')}}
+                                onMouseOver={()=>{setRentHovered(3)}}
+                                onMouseOut={()=>{setRentHovered(false)}}
+                            >
+                                대여
+                            </div>
                         </div>
                     )}
                 </div>
