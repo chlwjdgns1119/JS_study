@@ -1,11 +1,37 @@
+.tentstall-main > .tentstall-main-filter > .tentstall-main-filter-rent {
+    position: relative;
+}
+
 .tentstall-main > .tentstall-main-filter > .tentstall-main-filter-rent > .filter-state {
-    background-color: aqua;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 76px;
+    padding: 5px 4px 5px 4px;
+    border: solid 1px rgb(156, 156, 156);
+    border-radius: 8px;
+    gap: 10px;
+}
+
+.tentstall-main > .tentstall-main-filter > .tentstall-main-filter-rent > .filter-state > .filter-state-down {
+    font-size: 16px;
 }
 
 .tentstall-main > .tentstall-main-filter > .tentstall-main-filter-rent > .filter-dropdown {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     position: absolute;
-    top: 30px;
-    background-color: gray;
+    top: 40px;
+    width: 86px;
+    border: solid 1px rgb(156, 156, 156);
+    border-radius: 8px;
+}
+
+.tentstall-main > .tentstall-main-filter > .tentstall-main-filter-rent > .filter-dropdown > .filter-dropdown-item {
+    box-sizing: border-box;
+    width: 96%;
+    padding: 5px 8px 5px 9px;
 }
 
 .tentstall-main > .tentstall-main-filter > .tentstall-main-filter-sort {

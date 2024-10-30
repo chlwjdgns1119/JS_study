@@ -1,6 +1,8 @@
 import { useState, useRef, useEffect } from 'react';
 import { FaCheck } from "react-icons/fa6";
+import { HiOutlineChevronDown } from "react-icons/hi";
 import TentstallItemlist from './TentstallItemlist';
+
 import './TentstallMain.css';
 
 const TentstallMain = () => {
@@ -34,12 +36,13 @@ const TentstallMain = () => {
                 <div className='tentstall-main-filter-rent' onClick={()=>{(rent_toggle ? setRentToggle(false): setRentToggle(true))}}  ref={divRef}>
                    <div className='filter-state'>
                         {rent_state}
+                        <HiOutlineChevronDown className='filter-state-down'/>
                     </div>
                     {rent_toggle && (
                         <div className='filter-dropdown'>
-                            <div>전체</div>
-                            <div>구매</div>
-                            <div>대여</div>
+                            <div className='filter-dropdown-item'>전체</div>
+                            <div className='filter-dropdown-item'>구매</div>
+                            <div className='filter-dropdown-item'>대여</div>
                         </div>
                     )}
                 </div>
