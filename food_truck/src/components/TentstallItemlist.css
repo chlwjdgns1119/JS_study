@@ -1,4 +1,6 @@
-.tentstall-main > .tentstall-main-filter > .tentstall-main-filter-rent {
+.tentstall-itemlist {
     display: flex;
-    
+    flex-wrap: wrap;
+    max-width: 1100px;
+    gap: 28px;
 }

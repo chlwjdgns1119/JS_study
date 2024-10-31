@@ -1,3 +1,48 @@
+.tentstall-item {
+    cursor: pointer;
+    margin-top: 20px;
+    padding: 12px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.tentstall-item-hovered {
+    box-shadow: 1px 1px 20px #ddddddbe;
+}
+
+.tentstall-item > img {
+    width: 230px; 
+    height: auto; 
+    max-height: 230px;
+    object-fit: contain;
+}
+
+.tentstall-item > .tentstall-item-explain > .tentstall-item-title {
+    margin-top: 5px;
+    font-family: 'Times New Roman', Times, Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.tentstall-item > .tentstall-item-explain > .tentstall-item-price {
+    margin-top: 8px;
+    font-family: "Noto Sans KR", sans-serif;
+    font-weight: 800;
+    font-size: 22px;
+    color: rgba(235, 23, 7, 0.87);
+}
+
+.tentstall-item > .tentstall-item-explain > .tentstall-item-score-rating {
+    display: flex;
+    margin-top: 8px;
+}
+
 .tentstall-item > .tentstall-item-explain > .tentstall-item-score-rating > .tentstall-item-score-icon {
-    color: rgb(231, 231, 97);
+    font-size: 16px;
+    color: rgb(245, 168, 24);
+}
+
+.tentstall-item > .tentstall-item-explain > .tentstall-item-score-rating > .score-notation {
+    font-family: "Do Hyeon", sans-serif;
+    font-size: 13px;
+    color: rgb(96, 96, 96)
 }
