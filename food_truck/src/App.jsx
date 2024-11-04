@@ -5,16 +5,18 @@ import Festival from "./pages/Festival"
 import Marketplace from "./pages/Marketplace";
 import Community from "./pages/Community"
 import Tentstall from "./pages/Tentstall";
+import FoodtruckPost from "./pages/FoodtruckPost";
 
 const App = () => {
     return (
         <Routes>
             <Route path="/" element={<Home />}/>
-            <Route path="foodstall/foodtruck" element={<Foodtruck />} />
-            <Route path="foodstall/tentstall" element={<Tentstall />} />
-            <Route path="festival" element={<Festival />} />
-            <Route path="marketplace" element={<Marketplace />} />
-            <Route path="community" element={<Community />} />
+            <Route path="foodstall/foodtruck" element={<Foodtruck/>} />
+            <Route path="foodstall/tentstall" element={<Tentstall/>} />
+            <Route path="festival" element={<Festival/>} />
+            <Route path="marketplace" element={<Marketplace/>} />
+            <Route path="community" element={<Community/>} />
+            <Route path="foodstall/foodtruck/post" element={<FoodtruckPost/>}/>
         </Routes>
     );
 };
