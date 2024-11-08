@@ -1,9 +1,9 @@
-import RichTextEditor from "../components/RichTextEditor";
+import TestEditorForm from "../components/TestEditorForm";
 
 const FoodtruckPost = () => {
     return(
         <div>
-            <RichTextEditor />
+            <TestEditorForm />
         </div>
     );
 }
