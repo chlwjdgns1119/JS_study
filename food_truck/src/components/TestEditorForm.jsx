@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { convertToRaw, convertFromRaw, Editor, EditorState, RichUtils } from 'draft-js';
 import draftToHtml from 'draftjs-to-html';
+import DOMPurify from 'dompurify';
 import 'draft-js/dist/Draft.css';
 
 const TestEditorForm = () => {
@@ -20,7 +21,7 @@ const TestEditorForm = () => {
     }
   }, []);
 
-  const toggleBold = event => {
+  const toggleBold = (event) => {
     event.preventDefault()
     setEditorState(RichUtils.toggleInlineStyle(editorState, 'BOLD'))
   }
@@ -36,13 +37,15 @@ const TestEditorForm = () => {
     console.log(htmlCode);
   }
 
+  const sanitizedContent = DOMPurify.sanitize(htmlCode);
+
   return (
     <div>
       <button onClick={saveContent}>저장입니다</button>
       <button onClick={toggleBold}>BOLD</button>
-      <button onClick={getStateByHtml}>html코드 출력</button>
+      <button onClick={getStateByHtml}>html코드 출력 {console.log(htmlCode)}</button>
       <Editor editorState={editorState} onChange={setEditorState} />
-      <div>{htmlCode}</div>
+      <div dangerouslySetInnerHTML={{ __html: sanitizedContent }} />
     </div>
   )
 };
