@@ -1,10 +1,9 @@
-import { useState, useEffect } from 'react';
+/* import { useState, useEffect } from 'react';
 import { convertToRaw, convertFromRaw, EditorState, RichUtils } from 'draft-js';
-
+import "../../node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import { Editor } from "react-draft-wysiwyg";
 import draftToHtml from 'draftjs-to-html';
 import DOMPurify from 'dompurify';
-import 'draft-js/dist/Draft.css';
 import './TestEditorForm.css';
 
 const TestEditorForm = () => {
@@ -12,7 +11,7 @@ const TestEditorForm = () => {
     EditorState.createEmpty()
   );
 
-  const htmlCode = draftToHtml(JSON.parse(localStorage.getItem("my-draft")));
+  
 
   useEffect(() => {
     const raw = localStorage.getItem("my-draft");
@@ -38,6 +37,10 @@ const TestEditorForm = () => {
 
   const getStateByHtml = () => {
     console.log(htmlCode);
+
+  const htmlCode = draftToHtml(JSON.parse(localStorage.getItem("my-draft")));
+
+  const sanitizedContent = DOMPurify.sanitize(htmlCode);
   }
 
   const toolbar = {
@@ -47,20 +50,16 @@ const TestEditorForm = () => {
     history: { inDropdown: false }, // history 드롭다운 // 이미지 커스텀 업로드
 }
 
-  const sanitizedContent = DOMPurify.sanitize(htmlCode);
+  
 
   return (
     <div>
       <div>
-        <button onClick={saveContent}>저장입니다</button>
-        <button onClick={toggleBold}>BOLD</button>
-        <button onClick={getStateByHtml}>html코드 출력 {console.log(htmlCode)}</button>
         <Editor
           editorClassName="editor"
           toolbarClassName="toolbar-class"
           toolbar={toolbar} 
           placeholder="내용을 작성해주세요."
-          // 한국어 설정
           localization={{
               locale: 'ko',
           }}
@@ -70,9 +69,118 @@ const TestEditorForm = () => {
         <div dangerouslySetInnerHTML={{ __html: sanitizedContent }} />
         
       </div>
-      <Editor editorClassName="loaded_state" editorState={editorState} />
     </div>
   )
+};
+
+export default TestEditorForm; */
+
+import { useState, useEffect } from 'react';
+import { Editor } from 'react-draft-wysiwyg';
+import '../../node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
+import './TestEditorForm.css';
+import styled from 'styled-components';
+import { convertToRaw, convertFromRaw, EditorState } from 'draft-js';
+import draftToHtml from 'draftjs-to-html';
+import DOMPurify from 'dompurify';
+
+const MyBlock = styled.div`
+    .wrapper-class{
+        width: 50%;
+        margin: 0 auto;
+        margin-bottom: 4rem;
+    }
+  .editor {
+    height: 500px !important;
+    border: 1px solid #f1f1f1 !important;
+    padding: 5px !important;
+    border-radius: 2px !important;
+  }
+`;
+
+const TestEditorForm = () => {
+  // useState로 상태관리하기 초기값은 EditorState.createEmpty()
+  // EditorState의 비어있는 ContentState 기본 구성으로 새 개체를 반환 => 이렇게 안하면 상태 값을 나중에 변경할 수 없음.
+  const [editorState, setEditorState] = useState(EditorState.createEmpty());
+
+  const onEditorStateChange = (editorState) => {
+    // editorState에 값 설정
+    setEditorState(editorState);
+  };
+
+  useEffect(() => {
+    const raw = localStorage.getItem("my-draft");
+
+    if (raw) {
+      const contentState = convertFromRaw(JSON.parse(raw));
+      const newEditorState = EditorState.createWithContent(contentState);
+      setEditorState(newEditorState);
+    }
+  }, []);
+
+  const saveContent = () => {
+    const contentState = editorState.getCurrentContent();
+    const raw = convertToRaw(contentState);
+    console.log(raw);
+    localStorage.setItem("my-draft", JSON.stringify(raw, null, 2))
+  }
+
+  const htmlCode = draftToHtml(JSON.parse(localStorage.getItem("my-draft")));
+
+  const sanitizedContent = DOMPurify.sanitize(htmlCode);
+
+  const toolbar = {
+    options: ['inline', 'blockType', 'fontSize', 'fontFamily', 'list', 'textAlign', 'colorPicker', 'link', 'emoji', 'history'],
+    inline: {
+      options: ['bold', 'italic', 'underline', 'strikethrough', 'superscript', 'subscript'],
+      bold: {className: "toolbar-inline"},
+    },
+    blockType: {
+      inDropdown: true,
+      options: ['Normal', 'H1', 'H2', 'H3', 'H4', 'H5', 'H6', 'Blockquote', 'Code'],
+      className: undefined,
+      component: undefined,
+      dropdownClassName: undefined,
+    },
+    fontSize: {
+      options: [8, 9, 10, 11, 12, 14, 16, 18, 24, 30, 36, 48, 60, 72, 96],
+    },
+    fontFamily: {
+      options: ['Arial', 'Georgia', 'Impact', 'Tahoma', 'Times New Roman', 'Verdana'],
+    },
+    list: {
+      inDropdown: true
+    },
+    textAlign: { inDropdown: true },
+  }
+
+  return (
+    <div>
+      <button onClick={saveContent}>저장하기</button>
+      <MyBlock>
+        <Editor
+          // 에디터와 툴바 모두에 적용되는 클래스
+          wrapperClassName="wrapper-class"
+          // 에디터 주변에 적용된 클래스
+          editorClassName="editor"
+          // 툴바 주위에 적용된 클래스
+          toolbarClassName="toolbar-class"
+          // 툴바 설정
+          toolbar={toolbar} 
+          placeholder="내용을 작성해주세요."
+          // 한국어 설정
+          localization={{
+            locale: 'ko',
+          }}
+          // 초기값 설정
+          editorState={editorState}
+          // 에디터의 값이 변경될 때마다 onEditorStateChange 호출
+          onEditorStateChange={onEditorStateChange}
+        />
+      </MyBlock>
+      <div dangerouslySetInnerHTML={{ __html: sanitizedContent }} />
+    </div>
+  );
 };
 
 export default TestEditorForm;
