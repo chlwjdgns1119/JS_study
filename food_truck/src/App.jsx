@@ -6,6 +6,7 @@ import Marketplace from "./pages/Marketplace";
 import Community from "./pages/Community"
 import Tentstall from "./pages/Tentstall";
 import FoodtruckPost from "./pages/FoodtruckPost";
+import TestPage from "./pages/TestPage"
 
 const App = () => {
     return (
@@ -17,6 +18,7 @@ const App = () => {
             <Route path="marketplace" element={<Marketplace/>} />
             <Route path="community" element={<Community/>} />
             <Route path="foodstall/foodtruck/post" element={<FoodtruckPost/>}/>
+            <Route path="TestPage" element={<TestPage/>}/>
         </Routes>
     );
 };

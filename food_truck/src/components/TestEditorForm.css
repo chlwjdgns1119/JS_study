@@ -20,3 +20,9 @@
     padding: 5px !important;
     border-radius: 2px !important;
 }
+
+.TestEditorForm-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

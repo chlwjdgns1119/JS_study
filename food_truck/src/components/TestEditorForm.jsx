@@ -131,7 +131,8 @@ const TestEditorForm = () => {
   }
 
   return (
-    <div>
+    <div className='TestEditorForm-main'> 
+      <TestGenerateTag tag_arr={tagState} />
       <button onClick={saveContent}>생성하기</button>
       <Editor
         // 에디터와 툴바 모두에 적용되는 클래스
@@ -152,7 +153,6 @@ const TestEditorForm = () => {
         // 에디터의 값이 변경될 때마다 onEditorStateChange 호출
         onEditorStateChange={onEditorStateChange}
       />
-      <TestGenerateTag tag_arr={tagState} />
     </div>
   );
 };

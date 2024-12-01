@@ -1,0 +1,20 @@
+.baseline {
+    width: 100vw;
+    height: 100vh;
+    background-color: bisque;
+    position: relative;
+}
+
+.test-plaintext {
+    position: absolute;
+    top: 30%;
+    left: 30%;
+}
+
+.test-editor {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
