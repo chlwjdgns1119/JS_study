@@ -130,26 +130,17 @@ const TestEditorForm = () => {
   const sanitizedContent = DOMPurify.sanitize(htmlCode);
 
   const toolbar = {
-    options: ['inline', 'blockType', 'fontSize', 'fontFamily', 'list', 'textAlign', 'colorPicker', 'link', 'emoji', 'history'],
+    options: ['inline', 'fontSize', 'colorPicker', 'emoji', 'list', 'textAlign'],
     inline: {
-      options: ['bold', 'italic', 'underline', 'strikethrough', 'superscript', 'subscript'],
+      options: ['bold', 'italic', 'underline', 'strikethrough'],
       bold: {className: "toolbar-inline"},
-    },
-    blockType: {
-      inDropdown: true,
-      options: ['Normal', 'H1', 'H2', 'H3', 'H4', 'H5', 'H6', 'Blockquote', 'Code'],
-      className: undefined,
-      component: undefined,
-      dropdownClassName: undefined,
     },
     fontSize: {
       options: [8, 9, 10, 11, 12, 14, 16, 18, 24, 30, 36, 48, 60, 72, 96],
     },
-    fontFamily: {
-      options: ['Arial', 'Georgia', 'Impact', 'Tahoma', 'Times New Roman', 'Verdana'],
-    },
     list: {
-      inDropdown: true
+      inDropdown: true,
+      options: ['unordered', 'ordered'],
     },
     textAlign: { inDropdown: true },
   }
