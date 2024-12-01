@@ -79,32 +79,18 @@ import { useState, useEffect } from 'react';
 import { Editor } from 'react-draft-wysiwyg';
 import '../../node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 import './TestEditorForm.css';
-import styled from 'styled-components';
 import { convertToRaw, convertFromRaw, EditorState } from 'draft-js';
 import draftToHtml from 'draftjs-to-html';
 import DOMPurify from 'dompurify';
-
-const MyBlock = styled.div`
-    .wrapper-class{
-        width: 50%;
-        margin: 0 auto;
-        margin-bottom: 4rem;
-    }
-  .editor {
-    height: 500px !important;
-    border: 1px solid #f1f1f1 !important;
-    padding: 5px !important;
-    border-radius: 2px !important;
-  }
-`;
+import TestGenerateTag from './TestGenerateTag';
 
 const TestEditorForm = () => {
   // useState로 상태관리하기 초기값은 EditorState.createEmpty()
   // EditorState의 비어있는 ContentState 기본 구성으로 새 개체를 반환 => 이렇게 안하면 상태 값을 나중에 변경할 수 없음.
   const [editorState, setEditorState] = useState(EditorState.createEmpty());
+  const [tagState, setTagState] = useState([]);
 
   const onEditorStateChange = (editorState) => {
-    // editorState에 값 설정
     setEditorState(editorState);
   };
 
@@ -121,19 +107,18 @@ const TestEditorForm = () => {
   const saveContent = () => {
     const contentState = editorState.getCurrentContent();
     const raw = convertToRaw(contentState);
-    console.log(raw);
-    localStorage.setItem("my-draft", JSON.stringify(raw, null, 2))
+    const sanitizedContent = DOMPurify.sanitize(draftToHtml(raw));
+    setTagState([
+      ...tagState,
+      sanitizedContent,
+    ])
   }
 
-  const htmlCode = draftToHtml(JSON.parse(localStorage.getItem("my-draft")));
-
-  const sanitizedContent = DOMPurify.sanitize(htmlCode);
 
   const toolbar = {
     options: ['inline', 'fontSize', 'colorPicker', 'emoji', 'list', 'textAlign'],
     inline: {
       options: ['bold', 'italic', 'underline', 'strikethrough'],
-      bold: {className: "toolbar-inline"},
     },
     fontSize: {
       options: [8, 9, 10, 11, 12, 14, 16, 18, 24, 30, 36, 48, 60, 72, 96],
@@ -147,29 +132,27 @@ const TestEditorForm = () => {
 
   return (
     <div>
-      <button onClick={saveContent}>저장하기</button>
-      <MyBlock>
-        <Editor
-          // 에디터와 툴바 모두에 적용되는 클래스
-          wrapperClassName="wrapper-class"
-          // 에디터 주변에 적용된 클래스
-          editorClassName="editor"
-          // 툴바 주위에 적용된 클래스
-          toolbarClassName="toolbar-class"
-          // 툴바 설정
-          toolbar={toolbar} 
-          placeholder="내용을 작성해주세요."
-          // 한국어 설정
-          localization={{
-            locale: 'ko',
-          }}
-          // 초기값 설정
-          editorState={editorState}
-          // 에디터의 값이 변경될 때마다 onEditorStateChange 호출
-          onEditorStateChange={onEditorStateChange}
-        />
-      </MyBlock>
-      <div dangerouslySetInnerHTML={{ __html: sanitizedContent }} />
+      <button onClick={saveContent}>생성하기</button>
+      <Editor
+        // 에디터와 툴바 모두에 적용되는 클래스
+        wrapperClassName="wrapper-class"
+        // 에디터 주변에 적용된 클래스
+        editorClassName="editor"
+        // 툴바 주위에 적용된 클래스
+        toolbarClassName="toolbar-class"
+        // 툴바 설정
+        toolbar={toolbar} 
+        placeholder="내용을 작성해주세요."
+        // 한국어 설정
+        localization={{
+          locale: 'ko',
+        }}
+        // 초기값 설정
+        editorState={editorState}
+        // 에디터의 값이 변경될 때마다 onEditorStateChange 호출
+        onEditorStateChange={onEditorStateChange}
+      />
+      <TestGenerateTag tag_arr={tagState} />
     </div>
   );
 };

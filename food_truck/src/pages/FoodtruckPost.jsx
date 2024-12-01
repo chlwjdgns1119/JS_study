@@ -4,9 +4,7 @@ const FoodtruckPost = () => {
     return(
         <div>
             <div>Draftjs 테스트</div>
-            <div style={{ border: '0.1rem solid' }}>
-                <TestEditorForm/>
-            </div>
+            <TestEditorForm/>
         </div>
     );
 }
