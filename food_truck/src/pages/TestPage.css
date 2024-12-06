@@ -1,20 +1,9 @@
-.baseline {
-    width: 100vw;
-    height: 100vh;
-    background-color: bisque;
-    position: relative;
+.box {
+    width: 2120px;
+    height: 1080px;
+    background-color: beige;
 }
 
-.test-plaintext {
-    position: absolute;
-    top: 30%;
-    left: 30%;
-}
-
-.test-editor {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.font {
+    font-size: 32px;
 }
