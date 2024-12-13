@@ -1,5 +1,15 @@
 .generate-basetag {
     width: 100vw;
-    height: 720px;
     background-color: rgb(196, 196, 196);
+}
+
+.height-resizing-bar {
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.temp-box {
+    width: 100px;
+    height: 50px;
+    background-color: aqua;
 }

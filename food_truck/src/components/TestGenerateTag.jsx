@@ -1,11 +1,72 @@
-import './TestGenerateTag.css'
+import './TestGenerateTag.css';
+import TestInnerHtmlTag from './TestInnerHtmlTag';'./TestInnerHtmlTag';
+import { useState, useEffect } from 'react';
+import {useDrag} from 'react-use-gesture';
+import {useSpring, animated} from 'react-spring';
 
 const TestGenerateTag = ({tag_arr}) => {
+    const [isResizing, setIsResizing] = useState(false);
+
+    const [initalY, setInitialY] = useState(0);
+
+    const [height, setHeight] = useState(720);
+
+    const handleMouseUp = () => {
+        setIsResizing(false);
+    }
+
+    const handleMouseDown = (e) => {
+        e.preventDefault();
+        setIsResizing(true);
+        setInitialY(e.clientY);
+    }
+
+    const handleMouseMove = (e) => {
+        if(isResizing){
+            const newHeight = height + e.clientY - initalY;
+            setHeight(newHeight);
+            setInitialY(e.clientY);
+        }
+    }
+
+    useEffect(() => {
+        if (isResizing) {
+            document.addEventListener('mousemove', handleMouseMove);
+            document.addEventListener('mouseup', handleMouseUp);
+        } else {
+            document.removeEventListener('mousemove', handleMouseMove);
+            document.removeEventListener('mouseup', handleMouseUp);
+        }
+    
+        return () => {
+            document.removeEventListener('mousemove', handleMouseMove);
+            document.removeEventListener('mouseup', handleMouseUp);
+        };
+    }, [isResizing]);
+
+    const logoPos = useSpring({x:0, y:0});
+
+    const bindLogoPos = useDrag((params)=>{
+        logoPos.x.set(params.offset[0]);
+        logoPos.y.set(params.offset[1]);
+      });
+
     return(
-        <div className="generate-basetag">
-            {tag_arr.map((item, idx) => (
-                <div key={idx} dangerouslySetInnerHTML={{ __html: item }} />
-            ))}
+        <div>
+            <div className="generate-basetag" style={{height}} >
+                {tag_arr.map((item, idx) => {
+                    
+                    return(<TestInnerHtmlTag key={idx} tag={item}/>)
+                    /* return(<div key={idx} dangerouslySetInnerHTML={{ __html: item }} />) */
+                })}
+                <animated.div className='temp-box' {...bindLogoPos()} style={{x: logoPos.x, y: logoPos.y}}/>
+            </div>
+            
+            <div className='height-resizing-bar' 
+                onMouseDown={handleMouseDown}
+                onMouseUp={handleMouseUp}
+                onMouseMove={handleMouseMove}>
+            </div>
         </div>
     );
 }

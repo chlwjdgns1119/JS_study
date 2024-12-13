@@ -1,9 +1,4 @@
 .box {
-    width: 2120px;
-    height: 1080px;
-    background-color: beige;
-}
-
-.font {
-    font-size: 32px;
+    width: 100vw;
+    background-color: antiquewhite;
 }

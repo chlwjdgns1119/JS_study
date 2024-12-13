@@ -114,7 +114,6 @@ const TestEditorForm = () => {
     ])
   }
 
-
   const toolbar = {
     options: ['inline', 'fontSize', 'colorPicker', 'emoji', 'list', 'textAlign'],
     inline: {
@@ -131,7 +130,7 @@ const TestEditorForm = () => {
   }
 
   return (
-    <div className='TestEditorForm-main'> 
+    <div className='TestEditorForm-main'>
       <TestGenerateTag tag_arr={tagState} />
       <button onClick={saveContent}>생성하기</button>
       <Editor
