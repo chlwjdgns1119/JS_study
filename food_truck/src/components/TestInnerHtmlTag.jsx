@@ -1,16 +1,20 @@
 import {useDrag} from 'react-use-gesture';
 import {useSpring, animated} from 'react-spring';
+import { useRef } from 'react';
 
 const TestInnerHtmlTag = ({key, tag}) => {
 
-    const logoPos = useSpring({x:0, y:0});
+    const logoPos = useRef({ x: 0, y: 0 });
+        
+    const [springProps, setSpringProps] = useSpring(() => ({ x: 0, y: 0 }));
 
-    const bindLogoPos = useDrag((params)=>{
-        logoPos.x.set(params.offset[0]);
-        logoPos.y.set(params.offset[1]);
-      });
+    const bindLogoPos = useDrag((params) => {
+        logoPos.current.x = params.offset[0];
+        logoPos.current.y = params.offset[1];
+        setSpringProps({ x: logoPos.current.x, y: logoPos.current.y });
+    });
 
-      return(<animated.div {...bindLogoPos()} style={{x: logoPos.x, y: logoPos.y}} key={key} dangerouslySetInnerHTML={{ __html: tag }} />)
+      return(<animated.div {...bindLogoPos()} style={{x: springProps.x, y: springProps.y, display: 'inline-block', position: 'relative', cursor: 'default'}} key={key} dangerouslySetInnerHTML={{ __html: tag }} />)
 }
 
 export default TestInnerHtmlTag;

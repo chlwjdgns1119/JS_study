@@ -75,16 +75,14 @@ const TestEditorForm = () => {
 
 export default TestEditorForm; */
 
-import { useState, useEffect, useRef } from 'react';
+import { useState } from 'react';
 import { Editor } from 'react-draft-wysiwyg';
 import '../../node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 import './TestEditorForm.css';
-import { convertToRaw, convertFromRaw, EditorState } from 'draft-js';
+import { convertToRaw, EditorState } from 'draft-js';
 import draftToHtml from 'draftjs-to-html';
 import DOMPurify from 'dompurify';
 import TestGenerateTag from './TestGenerateTag';
-import {useDrag} from 'react-use-gesture';
-import {useSpring, animated} from 'react-spring';
 
 const TestEditorForm = () => {
   // useState로 상태관리하기 초기값은 EditorState.createEmpty()
@@ -95,16 +93,6 @@ const TestEditorForm = () => {
   const onEditorStateChange = (editorState) => {
     setEditorState(editorState);
   };
-
-  useEffect(() => {
-    const raw = localStorage.getItem("my-draft");
-
-    if (raw) {
-      const contentState = convertFromRaw(JSON.parse(raw));
-      const newEditorState = EditorState.createWithContent(contentState);
-      setEditorState(newEditorState);
-    }
-  }, []);
 
   const saveContent = () => {
     const contentState = editorState.getCurrentContent();
@@ -131,16 +119,6 @@ const TestEditorForm = () => {
     textAlign: { inDropdown: true },
   }
 
-  const logoPos = useRef({ x: 0, y: 0 });
-
-  const [springProps, setSpringProps] = useSpring(() => ({ x: 0, y: 0 }));
-
-  const bindLogoPos = useDrag((params) => {
-    logoPos.current.x = params.offset[0];
-    logoPos.current.y = params.offset[1];
-    setSpringProps({ x: logoPos.current.x, y: logoPos.current.y });
-  });
-
   return (
     <div className='TestEditorForm-main'>
       <TestGenerateTag tag_arr={tagState} />
@@ -164,7 +142,6 @@ const TestEditorForm = () => {
         // 에디터의 값이 변경될 때마다 onEditorStateChange 호출
         onEditorStateChange={onEditorStateChange}
       />
-      <animated.div className='temp-box' {...bindLogoPos()} style={{ x: springProps.x, y: springProps.y }}/>
     </div>
   );
 };
