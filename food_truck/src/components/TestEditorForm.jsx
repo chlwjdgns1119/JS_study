@@ -89,6 +89,7 @@ const TestEditorForm = () => {
   // EditorState의 비어있는 ContentState 기본 구성으로 새 개체를 반환 => 이렇게 안하면 상태 값을 나중에 변경할 수 없음.
   const [editorState, setEditorState] = useState(EditorState.createEmpty());
   const [tagState, setTagState] = useState([]);
+  const [pageState, setPageState] = useState({});
 
   const onEditorStateChange = (editorState) => {
     setEditorState(editorState);
@@ -119,9 +120,14 @@ const TestEditorForm = () => {
     textAlign: { inDropdown: true },
   }
 
+  const savePage = (key, tag, style) => {
+    setPageState({...pageState, [key]: [tag, style]});
+    console.log(pageState);
+  }
+
   return (
     <div className='TestEditorForm-main'>
-      <TestGenerateTag tag_arr={tagState} />
+      <TestGenerateTag tag_arr={tagState} saveTag={savePage} />
       <button onClick={saveContent}>생성하기</button>
       <Editor
         // 에디터와 툴바 모두에 적용되는 클래스
@@ -142,6 +148,7 @@ const TestEditorForm = () => {
         // 에디터의 값이 변경될 때마다 onEditorStateChange 호출
         onEditorStateChange={onEditorStateChange}
       />
+      <button onClick={savePage}>페이지 저장하기</button>
     </div>
   );
 };

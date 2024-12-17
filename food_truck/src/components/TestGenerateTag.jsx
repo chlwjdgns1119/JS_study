@@ -1,10 +1,7 @@
 import './TestGenerateTag.css';
 import TestInnerHtmlTag from './TestInnerHtmlTag';'./TestInnerHtmlTag';
-import { useState, useEffect, useRef } from 'react';
-import {useDrag} from 'react-use-gesture';
-import {useSpring, animated} from 'react-spring';
-
-const TestGenerateTag = ({tag_arr}) => {
+import { useState, useEffect } from 'react';
+const TestGenerateTag = ({tag_arr, saveTag}) => {
     const [isResizing, setIsResizing] = useState(false);
 
     const [initalY, setInitialY] = useState(0);
@@ -44,27 +41,16 @@ const TestGenerateTag = ({tag_arr}) => {
         };
     }, [isResizing]);
 
-    const logoPos = useRef({ x: 0, y: 0 });
-    
-    const [springProps, setSpringProps] = useSpring(() => ({ x: 0, y: 0 }));
-
-    const bindLogoPos = useDrag((params) => {
-        logoPos.current.x = params.offset[0];
-        logoPos.current.y = params.offset[1];
-        setSpringProps({ x: logoPos.current.x, y: logoPos.current.y });
-    });
-
     return(
         <div>
             <div className="generate-basetag" style={{height}} >
                 {tag_arr.map((item, idx) => {
-                    
-                    return(<TestInnerHtmlTag key={idx} tag={item}/>)
+                    return(
+                        <TestInnerHtmlTag key={idx} tag={item} saveTag={saveTag}/>
+                    )
                     /* return(<div key={idx} dangerouslySetInnerHTML={{ __html: item }} />) */
                 })}
-                <animated.div className='temp-box' {...bindLogoPos()} style={{x: springProps.x, y: springProps.y}}/>
             </div>
-            
             <div className='height-resizing-bar' 
                 onMouseDown={handleMouseDown}
                 onMouseUp={handleMouseUp}
