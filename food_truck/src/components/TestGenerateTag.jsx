@@ -1,12 +1,11 @@
 import './TestGenerateTag.css';
 import TestInnerHtmlTag from './TestInnerHtmlTag';'./TestInnerHtmlTag';
-import { useState, useEffect } from 'react';
-const TestGenerateTag = ({tag_arr, saveTag}) => {
+import { useState, useEffect, forwardRef } from 'react';
+const TestGenerateTag = forwardRef((props, ref) => {
     const [isResizing, setIsResizing] = useState(false);
-
     const [initalY, setInitialY] = useState(0);
-
     const [height, setHeight] = useState(720);
+    const {tag_arr} = props;
 
     const handleMouseUp = () => {
         setIsResizing(false);
@@ -46,7 +45,7 @@ const TestGenerateTag = ({tag_arr, saveTag}) => {
             <div className="generate-basetag" style={{height}} >
                 {tag_arr.map((item, idx) => {
                     return(
-                        <TestInnerHtmlTag key={idx} tag={item} saveTag={saveTag}/>
+                        <TestInnerHtmlTag key={idx} idx={idx} tag={item} ref={ref}/>
                     )
                     /* return(<div key={idx} dangerouslySetInnerHTML={{ __html: item }} />) */
                 })}
@@ -58,6 +57,8 @@ const TestGenerateTag = ({tag_arr, saveTag}) => {
             </div>
         </div>
     );
-}
+});
+
+TestGenerateTag.displayName = 'TestGenerateTag';
 
 export default TestGenerateTag;

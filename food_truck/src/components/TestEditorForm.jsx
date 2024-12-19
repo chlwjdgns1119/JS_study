@@ -75,7 +75,7 @@ const TestEditorForm = () => {
 
 export default TestEditorForm; */
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { Editor } from 'react-draft-wysiwyg';
 import '../../node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 import './TestEditorForm.css';
@@ -90,6 +90,7 @@ const TestEditorForm = () => {
   const [editorState, setEditorState] = useState(EditorState.createEmpty());
   const [tagState, setTagState] = useState([]);
   const [pageState, setPageState] = useState({});
+  const childRef = useRef();
 
   const onEditorStateChange = (editorState) => {
     setEditorState(editorState);
@@ -120,14 +121,16 @@ const TestEditorForm = () => {
     textAlign: { inDropdown: true },
   }
 
-  const savePage = (key, tag, style) => {
-    setPageState({...pageState, [key]: [tag, style]});
+  const savePage = () => {
+    const temp = childRef.current.getChildData();
+    console.log(temp)
+    // setPageState({...pageState, [idx]: [tag, style]});
     console.log(pageState);
   }
 
   return (
     <div className='TestEditorForm-main'>
-      <TestGenerateTag tag_arr={tagState} saveTag={savePage} />
+      <TestGenerateTag tag_arr={tagState} ref={childRef}/>
       <button onClick={saveContent}>생성하기</button>
       <Editor
         // 에디터와 툴바 모두에 적용되는 클래스
