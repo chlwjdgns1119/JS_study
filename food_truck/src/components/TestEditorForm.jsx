@@ -90,7 +90,7 @@ const TestEditorForm = () => {
   const [editorState, setEditorState] = useState(EditorState.createEmpty());
   const [tagState, setTagState] = useState([]);
   const [pageState, setPageState] = useState({});
-  const childRef = useRef();
+  const [showState, setShow] = useState(false);
 
   const onEditorStateChange = (editorState) => {
     setEditorState(editorState);
@@ -121,16 +121,18 @@ const TestEditorForm = () => {
     textAlign: { inDropdown: true },
   }
 
-  const savePage = () => {
-    const temp = childRef.current.getChildData();
-    console.log(temp)
-    // setPageState({...pageState, [idx]: [tag, style]});
+  const saveTag = (idx, tag, style) => {
+    setPageState({...pageState, [idx]: [tag, style]})
+  }
+
+  const printPageState = () => {
     console.log(pageState);
+    setShow(true);
   }
 
   return (
     <div className='TestEditorForm-main'>
-      <TestGenerateTag tag_arr={tagState} ref={childRef}/>
+      <TestGenerateTag tag_arr={tagState} saveTag={saveTag}/>
       <button onClick={saveContent}>생성하기</button>
       <Editor
         // 에디터와 툴바 모두에 적용되는 클래스
@@ -151,7 +153,14 @@ const TestEditorForm = () => {
         // 에디터의 값이 변경될 때마다 onEditorStateChange 호출
         onEditorStateChange={onEditorStateChange}
       />
-      <button onClick={savePage}>페이지 저장하기</button>
+      <button onClick={printPageState}>저장된 페이지 출력하기</button>
+      {showState && <div className="generate-basetag">
+        {Object.values(pageState).map((item, idx) => {
+          return(
+            <div key={idx} dangerouslySetInnerHTML={{__html: item[0]}}/>
+          )
+        })}
+      </div>}
     </div>
   );
 };
