@@ -1,6 +1,7 @@
 .generate-basetag {
     width: 100vw;
     background-color: rgb(196, 196, 196);
+    position: relative;
 }
 
 .height-resizing-bar {

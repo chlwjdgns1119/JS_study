@@ -75,7 +75,7 @@ const TestEditorForm = () => {
 
 export default TestEditorForm; */
 
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { Editor } from 'react-draft-wysiwyg';
 import '../../node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 import './TestEditorForm.css';
@@ -126,7 +126,6 @@ const TestEditorForm = () => {
   }
 
   const printPageState = () => {
-    console.log(pageState);
     setShow(true);
   }
 
@@ -154,10 +153,21 @@ const TestEditorForm = () => {
         onEditorStateChange={onEditorStateChange}
       />
       <button onClick={printPageState}>저장된 페이지 출력하기</button>
-      {showState && <div className="generate-basetag">
+      {showState && <div className="generate-savPage">
         {Object.values(pageState).map((item, idx) => {
+          const styleString = Object.entries(item[1])
+                              .map(([key, value]) => {
+                                if(key == 'left' || key == 'top'){
+                                  return (`${key}: ${value}px`)
+                                }
+                                else{
+                                  return (`${key}: ${value}`)
+                                }
+                              })
+                              .join('; ');
+          console.log(item[1])
           return(
-            <div key={idx} dangerouslySetInnerHTML={{__html: item[0]}}/>
+            <div key={idx} dangerouslySetInnerHTML={{__html: `<div style='${styleString}'>${item[0]}</div>`}}/>
           )
         })}
       </div>}
