@@ -2,7 +2,7 @@ import './TestGenerateTag.css';
 import TestInnerHtmlTag from './TestInnerHtmlTag';'./TestInnerHtmlTag';
 import { useState, useEffect } from 'react';
 
-const TestGenerateTag = ({tag_arr, saveTag}) => {
+const TestGenerateTag = ({tag_obj, saveTag, showState}) => {
     const [isResizing, setIsResizing] = useState(false);
     const [initalY, setInitialY] = useState(0);
     const [height, setHeight] = useState(720);
@@ -43,9 +43,9 @@ const TestGenerateTag = ({tag_arr, saveTag}) => {
     return(
         <div>
             <div className="generate-basetag" style={{height}} >
-                {tag_arr.map((item, idx) => {
+                {Object.values(tag_obj).map((item, idx) => {
                     return(
-                        <TestInnerHtmlTag key={idx} idx={idx} tag={item} saveTag={saveTag}/>
+                        <TestInnerHtmlTag key={idx} idx={idx} tag={item} saveTag={saveTag} showState={showState}/>
                     )
                     /* return(<div key={idx} dangerouslySetInnerHTML={{ __html: item }} />) */
                 })}

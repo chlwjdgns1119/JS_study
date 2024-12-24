@@ -75,7 +75,7 @@ const TestEditorForm = () => {
 
 export default TestEditorForm; */
 
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { Editor } from 'react-draft-wysiwyg';
 import '../../node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 import './TestEditorForm.css';
@@ -88,9 +88,10 @@ const TestEditorForm = () => {
   // useState로 상태관리하기 초기값은 EditorState.createEmpty()
   // EditorState의 비어있는 ContentState 기본 구성으로 새 개체를 반환 => 이렇게 안하면 상태 값을 나중에 변경할 수 없음.
   const [editorState, setEditorState] = useState(EditorState.createEmpty());
-  const [tagState, setTagState] = useState([]);
+  const [tagState, setTagState] = useState({});
   const [pageState, setPageState] = useState({});
   const [showState, setShow] = useState(false);
+  const idxRef = useRef(0);
 
   const onEditorStateChange = (editorState) => {
     setEditorState(editorState);
@@ -100,10 +101,11 @@ const TestEditorForm = () => {
     const contentState = editorState.getCurrentContent();
     const raw = convertToRaw(contentState);
     const sanitizedContent = DOMPurify.sanitize(draftToHtml(raw));
-    setTagState([
+    setTagState({
       ...tagState,
-      sanitizedContent,
-    ])
+      [idxRef.current]: sanitizedContent,
+    })
+    idxRef.current += 1;
   }
 
   const toolbar = {
@@ -129,9 +131,13 @@ const TestEditorForm = () => {
     setShow(true);
   }
 
+  const updatePageState = () => {
+    setShow(false);
+  }
+
   return (
     <div className='TestEditorForm-main'>
-      <TestGenerateTag tag_arr={tagState} saveTag={saveTag}/>
+      <TestGenerateTag tag_obj={tagState} saveTag={saveTag} showState={showState}/>
       <button onClick={saveContent}>생성하기</button>
       <Editor
         // 에디터와 툴바 모두에 적용되는 클래스
@@ -153,6 +159,7 @@ const TestEditorForm = () => {
         onEditorStateChange={onEditorStateChange}
       />
       <button onClick={printPageState}>저장된 페이지 출력하기</button>
+      <button onClick={updatePageState}>저장된 페이지 업데이트하기</button>
       {showState && <div className="generate-savPage">
         {Object.values(pageState).map((item, idx) => {
           const styleString = Object.entries(item[1])
