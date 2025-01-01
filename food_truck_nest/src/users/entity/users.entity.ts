@@ -20,15 +20,18 @@ export class UsersModel {
     })
     login_id: string;
 
-    @Column({
-        unique: true
-    })
+    @Column()
     password: string;
 
     @Column({
         nullable: true
     })
     phone: number;
+
+    @Column({
+        nullable: true
+    })
+    email: string;
 
     @Column({
         enum: Object.values(StateEnum),
@@ -43,11 +46,14 @@ export class UsersModel {
     role: RolesEnum;
 
     @CreateDateColumn({
-        readonly: true
+        readonly: true,
+        type: 'timestamp'
     })
     createdat: Date;
 
-    @UpdateDateColumn()
+    @UpdateDateColumn({
+        type: 'timestamp'
+    })
     updatedat: Date;
 
     @Column()
