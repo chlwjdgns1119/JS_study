@@ -30,7 +30,7 @@ let AuthService = class AuthService {
             role: roles_const_1.RolesEnum.Consummer,
             signup_method: signup_const_1.SignupEnum.Local
         });
-        return this.usersService.createUser(newUser);
+        return newUser;
     }
 };
 exports.AuthService = AuthService;

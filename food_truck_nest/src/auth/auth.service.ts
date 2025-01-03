@@ -28,6 +28,6 @@ export class AuthService {
             signup_method: SignupEnum.Local
         });
 
-        return this.usersService.createUser(newUser);
+        return newUser;
     }
 }
