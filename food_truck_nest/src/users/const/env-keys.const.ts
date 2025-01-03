@@ -1,0 +1,1 @@
+export const ENV_HASH_ROUNDS_KEY = 'HASH_ROUNDS'

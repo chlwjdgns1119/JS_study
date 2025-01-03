@@ -3,7 +3,8 @@ import { SignupUserDto } from './dto/signup-user.dto';
 import * as bcrypt from 'bcrypt';
 import { ConfigService } from '@nestjs/config';
 import { UsersService } from 'src/users/users.service';
-import { ENV_HASH_ROUNDS_KEY } from 'src/common/const/env.'
+import { ENV_HASH_ROUNDS_KEY } from 'src/common/const/env-keys.const'
+import { SignupEnum } from 'src/users/const/signup.const';
 
 @Injectable()
 export class AuthService {
@@ -22,6 +23,7 @@ export class AuthService {
         const newUser = await this.usersService.createUser({
             ...user,
             password: hash,
+            signup_method: SignupEnum.Local
         });
 
         return this.usersService.createUser(newUser);

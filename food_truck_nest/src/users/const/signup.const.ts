@@ -1,5 +1,5 @@
 export enum SignupEnum {
-    Common = "COMMON",
+    Local = "LOCAL",
     Kakao = "KAKAO",
     Naver = "NAVER",
     Google = "GOOGLE",

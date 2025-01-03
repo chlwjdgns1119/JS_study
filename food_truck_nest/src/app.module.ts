@@ -5,6 +5,7 @@ import { UsersModule } from './users/users.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { UsersModel } from './users/entity/users.entity';
 import { AuthModule } from './auth/auth.module';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
   imports: [
@@ -18,6 +19,10 @@ import { AuthModule } from './auth/auth.module';
       database: 'postgres',
       entities: [UsersModel],
       synchronize: true,
+    }),
+    ConfigModule.forRoot({
+      envFilePath: '.env',
+      isGlobal: true,
     }),
     AuthModule
   ],
