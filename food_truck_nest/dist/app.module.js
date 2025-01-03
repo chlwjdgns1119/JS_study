@@ -13,6 +13,8 @@ const app_service_1 = require("./app.service");
 const users_module_1 = require("./users/users.module");
 const typeorm_1 = require("@nestjs/typeorm");
 const users_entity_1 = require("./users/entity/users.entity");
+const auth_module_1 = require("./auth/auth.module");
+const config_1 = require("@nestjs/config");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -29,7 +31,12 @@ exports.AppModule = AppModule = __decorate([
                 database: 'postgres',
                 entities: [users_entity_1.UsersModel],
                 synchronize: true,
-            })
+            }),
+            config_1.ConfigModule.forRoot({
+                envFilePath: '.env',
+                isGlobal: true,
+            }),
+            auth_module_1.AuthModule
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],

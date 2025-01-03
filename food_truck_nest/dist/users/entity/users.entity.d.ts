@@ -7,6 +7,7 @@ export declare class UsersModel {
     login_id: string;
     password: string;
     phone: number;
+    email: string;
     state: StateEnum;
     role: RolesEnum;
     createdat: Date;

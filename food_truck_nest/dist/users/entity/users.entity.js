@@ -36,9 +36,7 @@ __decorate([
     __metadata("design:type", String)
 ], UsersModel.prototype, "login_id", void 0);
 __decorate([
-    (0, typeorm_1.Column)({
-        unique: true
-    }),
+    (0, typeorm_1.Column)(),
     __metadata("design:type", String)
 ], UsersModel.prototype, "password", void 0);
 __decorate([
@@ -47,6 +45,12 @@ __decorate([
     }),
     __metadata("design:type", Number)
 ], UsersModel.prototype, "phone", void 0);
+__decorate([
+    (0, typeorm_1.Column)({
+        nullable: true
+    }),
+    __metadata("design:type", String)
+], UsersModel.prototype, "email", void 0);
 __decorate([
     (0, typeorm_1.Column)({
         enum: Object.values(state_const_1.StateEnum),
@@ -63,12 +67,15 @@ __decorate([
 ], UsersModel.prototype, "role", void 0);
 __decorate([
     (0, typeorm_1.CreateDateColumn)({
-        readonly: true
+        readonly: true,
+        type: 'timestamp'
     }),
     __metadata("design:type", Date)
 ], UsersModel.prototype, "createdat", void 0);
 __decorate([
-    (0, typeorm_1.UpdateDateColumn)(),
+    (0, typeorm_1.UpdateDateColumn)({
+        type: 'timestamp'
+    }),
     __metadata("design:type", Date)
 ], UsersModel.prototype, "updatedat", void 0);
 __decorate([
