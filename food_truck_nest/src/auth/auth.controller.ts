@@ -6,6 +6,16 @@ import { SignupUserDto } from './dto/signup-user.dto';
 export class AuthController {
   constructor(private readonly authService: AuthService) {}
 
+  @Post('login/local')
+  loginLocal(
+    @Body('login_id') login_id: string,
+    @Body('password') password: string,
+  ){
+    return this.authService.loginLocal({
+      login_id, password
+    })
+  }
+
   @Post('signup/local')
   signupLocal(
     @Body() signupInfo: SignupUserDto

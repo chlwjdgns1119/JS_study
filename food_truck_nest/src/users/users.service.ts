@@ -46,4 +46,12 @@ export class UsersService {
 
         return newUser;
     }
+
+    async getUsersByLoginid(login_id: string){
+        return this.usersRepository.findOne({
+            where: {
+                login_id,
+            }
+        })
+    }
 }
