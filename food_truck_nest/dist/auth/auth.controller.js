@@ -20,11 +20,25 @@ let AuthController = class AuthController {
     constructor(authService) {
         this.authService = authService;
     }
+    loginLocal(body, session) {
+        console.log(session.id);
+        console.log(session);
+        console.log(body.user);
+        return body.user;
+    }
     signupLocal(signupInfo) {
         return this.authService.signupLocal(signupInfo);
     }
 };
 exports.AuthController = AuthController;
+__decorate([
+    (0, common_1.Post)('login/local'),
+    __param(0, (0, common_1.Body)()),
+    __param(1, (0, common_1.Session)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object, Object]),
+    __metadata("design:returntype", void 0)
+], AuthController.prototype, "loginLocal", null);
 __decorate([
     (0, common_1.Post)('signup/local'),
     __param(0, (0, common_1.Body)()),

@@ -3,19 +3,18 @@ import { ConfigService } from '@nestjs/config';
 import * as session from 'express-session';
 import * as passport from 'passport';
 import Redis from "ioredis"
+import {RedisStore} from "connect-redis"
 
 export function setUpSession(app: INestApplication): void {
   const configService = app.get<ConfigService>(ConfigService);
 
-  const RedisStore = require("connect-redis").default;
-
-  const redisclient = new Redis("rediss://default:AduHAAIncDEyMDdiODJlNmU0MGM0ZmIyODhmYjMwOTM5ZmI2ODNlNHAxNTYxOTk@optimum-chigger-56199.upstash.io:6379");
+  /* const redisclient = new Redis("rediss://default:AduHAAIncDEyMDdiODJlNmU0MGM0ZmIyODhmYjMwOTM5ZmI2ODNlNHAxNTYxOTk@optimum-chigger-56199.upstash.io:6379");
   
   const redisStore = new RedisStore({
     client: redisclient,
     ttl: 30,
   });
-
+ */
 /*   const port = configService.get('REDIS_PORT');
   const host = configService.get('REDIS_HOST'); */
 
@@ -24,7 +23,7 @@ export function setUpSession(app: INestApplication): void {
         secret: configService.get('SESSION_SECRET'),  // 세션에 사용될 시크릿 값. 감춰두자.
         saveUninitialized: false,
         resave: false,
-        store: redisStore,
+        /* store: redisStore, */
         cookie: {
           httpOnly: true,
           secure: false,

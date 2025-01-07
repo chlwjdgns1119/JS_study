@@ -22,6 +22,10 @@ let AuthService = class AuthService {
         this.usersService = usersService;
         this.configService = configService;
     }
+    async loginLocal(user) {
+        const existingUser = await this.authenticateWithLocal(user);
+        return existingUser;
+    }
     async signupLocal(user) {
         const hash = await bcrypt.hash(user.password, parseInt(this.configService.get(env_keys_const_1.ENV_HASH_ROUNDS_KEY)));
         const newUser = await this.usersService.createUser({
@@ -31,6 +35,17 @@ let AuthService = class AuthService {
             signup_method: signup_const_1.SignupEnum.Local
         });
         return newUser;
+    }
+    async authenticateWithLocal(user) {
+        const existingUser = await this.usersService.getUsersByLoginid(user.login_id);
+        if (!existingUser) {
+            throw new common_1.UnauthorizedException('존재하지 않는 사용자입니다.');
+        }
+        const pass = await bcrypt.compare(user.password, existingUser.password);
+        if (!pass) {
+            throw new common_1.UnauthorizedException('비밀번호가 일치하지 않습니다.');
+        }
+        return existingUser;
     }
 };
 exports.AuthService = AuthService;

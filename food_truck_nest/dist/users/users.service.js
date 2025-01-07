@@ -51,6 +51,13 @@ let UsersService = class UsersService {
         const newUser = await this.usersRepository.save(userObject);
         return newUser;
     }
+    async getUsersByLoginid(login_id) {
+        return this.usersRepository.findOne({
+            where: {
+                login_id,
+            }
+        });
+    }
 };
 exports.UsersService = UsersService;
 exports.UsersService = UsersService = __decorate([
