@@ -16,27 +16,35 @@ exports.AuthController = void 0;
 const common_1 = require("@nestjs/common");
 const auth_service_1 = require("./auth.service");
 const signup_user_dto_1 = require("./dto/signup-user.dto");
+const local_auth_gaurd_1 = require("./guard/local-auth.gaurd");
 let AuthController = class AuthController {
     constructor(authService) {
         this.authService = authService;
     }
-    loginLocal(body, session) {
+    loginLocal(body, session, req) {
         console.log(session.id);
         console.log(session);
-        console.log(body.user);
-        return body.user;
+        console.log(req.user);
+        return req.user;
     }
     signupLocal(signupInfo) {
         return this.authService.signupLocal(signupInfo);
     }
+    async loginTest(login_id, password) {
+        const user = await this.authService.loginLocal({ login_id, password });
+        console.log(user);
+        return user;
+    }
 };
 exports.AuthController = AuthController;
 __decorate([
+    (0, common_1.UseGuards)(local_auth_gaurd_1.LocalAuthGuard),
     (0, common_1.Post)('login/local'),
     __param(0, (0, common_1.Body)()),
     __param(1, (0, common_1.Session)()),
+    __param(2, (0, common_1.Req)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Object, Object]),
+    __metadata("design:paramtypes", [Object, Object, Object]),
     __metadata("design:returntype", void 0)
 ], AuthController.prototype, "loginLocal", null);
 __decorate([
@@ -46,6 +54,14 @@ __decorate([
     __metadata("design:paramtypes", [signup_user_dto_1.SignupUserDto]),
     __metadata("design:returntype", void 0)
 ], AuthController.prototype, "signupLocal", null);
+__decorate([
+    (0, common_1.Post)('login/test'),
+    __param(0, (0, common_1.Body)('login_id')),
+    __param(1, (0, common_1.Body)('password')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, String]),
+    __metadata("design:returntype", Promise)
+], AuthController.prototype, "loginTest", null);
 exports.AuthController = AuthController = __decorate([
     (0, common_1.Controller)('auth'),
     __metadata("design:paramtypes", [auth_service_1.AuthService])

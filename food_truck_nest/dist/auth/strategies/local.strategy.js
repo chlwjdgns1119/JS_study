@@ -23,7 +23,7 @@ let LocalStrategy = class LocalStrategy extends (0, passport_1.PassportStrategy)
         this.authService = authService;
     }
     async validate(login_id, password) {
-        const user = this.authService.loginLocal({ login_id, password });
+        const user = await this.authService.loginLocal({ login_id, password });
         if (!user)
             throw new common_1.UnauthorizedException('로그인 정보를 확인할 수 없습니다.');
         return user;
