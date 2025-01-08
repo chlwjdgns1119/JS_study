@@ -1,38 +1,34 @@
-import { Body, Controller, Post, Get, Session, Req, UseGuards } from '@nestjs/common';
+import { Body, Controller, Post, Get, Req, UseGuards } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { SignupUserDto } from './dto/signup-user.dto';
-import { Request } from 'express';
 import { LocalAuthGuard } from './guard/local-auth.gaurd';
 import { LoggedInGuard } from './guard/logged-in.guard';
+import { User } from './decorator/auth.decorator';
 
 @Controller('auth')
 export class AuthController {
   constructor(private readonly authService: AuthService) {}
 
+  // 로컬 로그인
   @Post('login/local')
-  @UseGuards(LocalAuthGuard)
+  @UseGuards(LocalAuthGuard) // 로컬 guard 실행 후 인증되면 session 등록후 쿠키로 전달
   loginLocal(
-    @Body() body,
-    @Session() session,
-    @Req() req,
+    @User() user,
   ){
-    console.log(session.id);
-    console.log(session);
-    console.log(req.user);
-
-    return req.user;
+    return user;
   }
 
+  // user정보 반환
   @Get('get/user')
-  @UseGuards(LoggedInGuard)
+  @UseGuards(LoggedInGuard) // loggedinGuard를 통해 sessionID를 통한 인증으로 접근 제공(user정보 전달)
   getUser(
     @Req() req,
   ){
     console.log(req.user);
-
     return req.user;
   }
 
+  // 로컬 로그인
   @Post('signup/local')
   signupLocal(
     @Body() signupInfo: SignupUserDto

@@ -22,10 +22,7 @@ let AuthController = class AuthController {
     constructor(authService) {
         this.authService = authService;
     }
-    loginLocal(body, session, req) {
-        console.log(session.id);
-        console.log(session);
-        console.log(req.user);
+    loginLocal(req) {
         return req.user;
     }
     getUser(req) {
@@ -45,11 +42,9 @@ exports.AuthController = AuthController;
 __decorate([
     (0, common_1.Post)('login/local'),
     (0, common_1.UseGuards)(local_auth_gaurd_1.LocalAuthGuard),
-    __param(0, (0, common_1.Body)()),
-    __param(1, (0, common_1.Session)()),
-    __param(2, (0, common_1.Req)()),
+    __param(0, (0, common_1.Req)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Object, Object, Object]),
+    __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", void 0)
 ], AuthController.prototype, "loginLocal", null);
 __decorate([
