@@ -17,6 +17,7 @@ const common_1 = require("@nestjs/common");
 const auth_service_1 = require("./auth.service");
 const signup_user_dto_1 = require("./dto/signup-user.dto");
 const local_auth_gaurd_1 = require("./guard/local-auth.gaurd");
+const logged_in_guard_1 = require("./guard/logged-in.guard");
 let AuthController = class AuthController {
     constructor(authService) {
         this.authService = authService;
@@ -24,6 +25,10 @@ let AuthController = class AuthController {
     loginLocal(body, session, req) {
         console.log(session.id);
         console.log(session);
+        console.log(req.user);
+        return req.user;
+    }
+    getUser(req) {
         console.log(req.user);
         return req.user;
     }
@@ -38,8 +43,8 @@ let AuthController = class AuthController {
 };
 exports.AuthController = AuthController;
 __decorate([
-    (0, common_1.UseGuards)(local_auth_gaurd_1.LocalAuthGuard),
     (0, common_1.Post)('login/local'),
+    (0, common_1.UseGuards)(local_auth_gaurd_1.LocalAuthGuard),
     __param(0, (0, common_1.Body)()),
     __param(1, (0, common_1.Session)()),
     __param(2, (0, common_1.Req)()),
@@ -47,6 +52,14 @@ __decorate([
     __metadata("design:paramtypes", [Object, Object, Object]),
     __metadata("design:returntype", void 0)
 ], AuthController.prototype, "loginLocal", null);
+__decorate([
+    (0, common_1.Get)('get/user'),
+    (0, common_1.UseGuards)(logged_in_guard_1.LoggedInGuard),
+    __param(0, (0, common_1.Req)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", void 0)
+], AuthController.prototype, "getUser", null);
 __decorate([
     (0, common_1.Post)('signup/local'),
     __param(0, (0, common_1.Body)()),

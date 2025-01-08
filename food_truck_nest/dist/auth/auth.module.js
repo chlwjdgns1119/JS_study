@@ -13,14 +13,17 @@ const auth_controller_1 = require("./auth.controller");
 const users_module_1 = require("../users/users.module");
 const local_strategy_1 = require("./strategies/local.strategy");
 const passport_1 = require("@nestjs/passport");
+const local_serializer_1 = require("./serializer/local.serializer");
+const typeorm_1 = require("@nestjs/typeorm");
+const users_entity_1 = require("../users/entity/users.entity");
 let AuthModule = class AuthModule {
 };
 exports.AuthModule = AuthModule;
 exports.AuthModule = AuthModule = __decorate([
     (0, common_1.Module)({
-        imports: [users_module_1.UsersModule, passport_1.PassportModule.register({ session: true })],
+        imports: [users_module_1.UsersModule, passport_1.PassportModule.register({ session: true }), typeorm_1.TypeOrmModule.forFeature([users_entity_1.UsersModel])],
         controllers: [auth_controller_1.AuthController],
-        providers: [auth_service_1.AuthService, local_strategy_1.LocalStrategy],
+        providers: [auth_service_1.AuthService, local_strategy_1.LocalStrategy, local_serializer_1.LocalSerializer],
     })
 ], AuthModule);
 //# sourceMappingURL=auth.module.js.map

@@ -3,6 +3,7 @@ import { AuthService } from './auth.service';
 import { SignupUserDto } from './dto/signup-user.dto';
 import { Request } from 'express';
 import { LocalAuthGuard } from './guard/local-auth.gaurd';
+import { LoggedInGuard } from './guard/logged-in.guard';
 
 @Controller('auth')
 export class AuthController {
@@ -17,6 +18,16 @@ export class AuthController {
   ){
     console.log(session.id);
     console.log(session);
+    console.log(req.user);
+
+    return req.user;
+  }
+
+  @Get('get/user')
+  @UseGuards(LoggedInGuard)
+  getUser(
+    @Req() req,
+  ){
     console.log(req.user);
 
     return req.user;
