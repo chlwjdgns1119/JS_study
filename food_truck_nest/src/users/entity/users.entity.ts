@@ -10,17 +10,19 @@ export class UsersModel {
 
     @Column({
         unique: true,
-        readonly: true
     })
     nickname: string;
 
     @Column({
         unique: true,
-        readonly: true
+        readonly: true,
+        nullable: true,
     })
     login_id: string;
 
-    @Column()
+    @Column({
+        nullable: true,
+    })
     password: string;
 
     @Column({
