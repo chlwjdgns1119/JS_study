@@ -4,8 +4,23 @@ import style from "./index.module.css";
 import { ReactNode } from "react";
 import books from "@/mock/books.json";
 import BookItem from "@/components/book-item";
+import { InferGetServerSidePropsType } from "next";
+import fetchBooks from "@/lib/fetch-books";
 
-export default function Home() {
+export const getServerSideProps = async() => {
+
+  const allBooks = await fetchBooks();
+
+  return {
+    props: {
+      allBooks,
+    },
+  }
+}
+
+export default function Home({allBooks}: InferGetServerSidePropsType<typeof getServerSideProps>) {
+  console.log(allBooks);
+
   return (
     <div className={style.container}>
       <section>
