@@ -1,4 +1,3 @@
-// CSS Module
 import SearchableLayout from "@/components/searchable-layout";
 import style from "./index.module.css";
 import { ReactNode } from "react";
